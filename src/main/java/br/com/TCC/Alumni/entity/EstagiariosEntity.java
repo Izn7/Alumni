@@ -1,5 +1,7 @@
 package br.com.TCC.Alumni.entity;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,12 +23,41 @@ public class EstagiariosEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nome;
-	private String idade;
+	private Date dataNascimento;
+	private String emailEdu;
 	private String universidade;
 	private String senha;
 	private String ra;
+	private String sobrenome;
+	private String cpf;
 	
 	
+	
+	
+	public Date getDataNascimento() {
+		return dataNascimento;
+	}
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+	public String getEmailEdu() {
+		return emailEdu;
+	}
+	public void setEmailEdu(String emailEdu) {
+		this.emailEdu = emailEdu;
+	}
+	public String getSobrenome() {
+		return sobrenome;
+	}
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 	public String getRa() {
 		return ra;
 	}
@@ -57,12 +88,8 @@ public class EstagiariosEntity {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getIdade() {
-		return idade;
-	}
-	public void setIdade(String idade) {
-		this.idade = idade;
-	}
+	
+	
 	public String getUniversidade() {
 		return universidade;
 	}

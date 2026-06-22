@@ -39,9 +39,11 @@ public static long getSerialversionuid() {
 	
 
 	private String nome;
+	private String sobrenome;
 	private String cargo;
 	private String senha;
 	private String email;
+	private String cpf;
 	
 	
 	@ManyToOne
@@ -50,6 +52,20 @@ public static long getSerialversionuid() {
 	
 	
 	
+	
+	
+	public String getSobrenome() {
+		return sobrenome;
+	}
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 	public int getId() {
 		return id;
 	}
