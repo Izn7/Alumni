@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minhas Tarefas | ALUMNI</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" >
+<link rel="stylesheet" href="css/detalhesTarefa.css">
+</head>
+<body>
+<div class="amb"></div>
+
+<div class="sov" id="sov" onclick="this.classList.remove('open');document.getElementById('sb').classList.remove('open')"></div>
+<aside class="sidebar" id="sb">
+  <div class="sb-hd">
+    <div class="nav-logo">
+      <img src="img/GDE SENAI.png" alt="ALUMNI" class="logo-img">
+    </div>
+    <button class="sb-close" onclick="document.getElementById('sb').classList.remove('open');document.getElementById('sov').classList.remove('open')">✕</button>
+  </div>
+  <nav class="snav">
+    <a href="#" class="on">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      Minhas Tarefas
+    </a>
+    <a href="#">
+      <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Meu Perfil
+    </a>
+    <div class="sdiv"></div>
+    <a href="#" class="logout">
+      <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      Sair
+    </a>
+  </nav>
+</aside>
+
+<nav class="nav">
+  <div class="nav-in">
+    <div style="display:flex;align-items:center;gap:14px">
+      <button class="burger" onclick="document.getElementById('sb').classList.add('open');document.getElementById('sov').classList.add('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-logo">
+        <img src="img/GDE SENAI.png" alt="ALUMNI" class="logo-img">
+      </div>
+    </div>
+    <a href="#" class="nav-user-link">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Perfil">
+      <div><div class="nu-name">Rafael Richard</div><div class="nu-role">Estagiário</div></div>
+    </a>
+  </div>
+</nav>
+
+<main class="main">
+  <div class="container">
+
+    <header class="pg-hd">
+      <h1 class="pg-title">CRONOGRAMA DE <span class="hl">ATIVIDADES</span></h1>
+      <p class="pg-sub">Acompanhe suas responsabilidades e evolua sua carreira.</p>
+    </header>
+
+    <div class="progress-card">
+      <div class="prog-stat">
+        <div class="prog-val" style="color:var(--o)">7</div>
+        <div class="prog-lbl">Em Aberto</div>
+      </div>
+      <div class="prog-divider"></div>
+      <div class="prog-stat">
+        <div class="prog-val" style="color:var(--success)">5</div>
+        <div class="prog-lbl">Concluídas</div>
+      </div>
+      <div class="prog-divider"></div>
+      <div class="prog-bar-wrap">
+        <div class="prog-bar-lbl">
+          <span>Progresso Geral</span>
+          <span>41% concluído</span>
+        </div>
+        <div class="pbar"><div class="pbar-fill" style="width:41%"></div></div>
+      </div>
+    </div>
+
+    <section class="task-group">
+      <h2 class="group-title">Atividades em Aberto</h2>
+      <div class="task-list">
+        
+        <div class="task-item-wrap">
+          <div class="task-item" onclick="this.parentElement.classList.toggle('active')">
+            <span class="task-bullet"></span>
+            <span class="task-text">Relatório Semanal de Atividades — Semana 12</span>
+            <span class="task-arrow">➔</span>
+          </div>
+          <div class="task-detail-content">
+            <header class="task-header">
+                <span class="category-tag">Relatórios</span>
+                <div class="task-meta">
+                    <span><strong>Prazo:</strong> 15 de Outubro, 2026</span>
+                    <span class="status-badge-pending">Pendente</span>
+                </div>
+            </header>
+            <div class="detail-grid">
+                <div class="detail-card main-info">
+                    <h2>Instruções da Atividade</h2>
+                    <p>Preencha o relatório detalhando as atividades desenvolvidas durante a semana 12. É necessário descrever os desafios encontrados e as soluções aplicadas no projeto de documentação técnica.</p>
+                    <div class="check-list-area">
+                        <h3>O que deve conter:</h3>
+                        <ul class="check-list">
+                            <li>Resumo das reuniões diárias.</li>
+                            <li>Prints de progresso no código/documentação.</li>
+                            <li>Autoavaliação de dificuldades.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="detail-card submission-area">
+                    <h2>Sua Entrega</h2>
+                    <p class="small-text">Envie o arquivo final em PDF ou DOCX.</p>
+                    <label class="drop-zone" for="file-input-1">
+                        <span class="upload-icon">☁️</span>
+                        <p>Arraste seu arquivo ou <strong>clique para buscar</strong></p>
+                        <input type="file" id="file-input-1" hidden>
+                    </label>
+                    <div class="comment-section">
+                        <label>Observações (opcional)</label>
+                        <textarea placeholder="Escreva um comentário para o seu gestor..."></textarea>
+                    </div>
+                    <button class="btn-submit">Enviar Atividade</button>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="task-item-wrap">
+          <div class="task-item" onclick="this.parentElement.classList.toggle('active')">
+            <span class="task-bullet"></span>
+            <span class="task-text">Atualização de documentação técnica do projeto</span>
+            <span class="task-arrow">➔</span>
+          </div>
+          <div class="task-detail-content">
+            <header class="task-header">
+                <span class="category-tag">Documentação</span>
+                <div class="task-meta">
+                    <span><strong>Prazo:</strong> 18 de Outubro, 2026</span>
+                    <span class="status-badge-pending">Pendente</span>
+                </div>
+            </header>
+            <div class="detail-grid">
+                <div class="detail-card main-info">
+                    <h2>Instruções da Atividade</h2>
+                    <p>Subir os artefatos atualizados no repositório de documentação, alinhados com o último sprint.</p>
+                </div>
+                <div class="detail-card submission-area">
+                    <h2>Sua Entrega</h2>
+                    <label class="drop-zone" for="file-input-2">
+                        <span class="upload-icon">☁️</span>
+                        <p>Arraste seu arquivo ou <strong>clique para buscar</strong></p>
+                        <input type="file" id="file-input-2" hidden>
+                    </label>
+                    <button class="btn-submit">Enviar Atividade</button>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="task-item-wrap">
+          <div class="task-item" onclick="this.parentElement.classList.toggle('active')">
+            <span class="task-bullet"></span>
+            <span class="task-text">Reunião de alinhamento trimestral com Gestor</span>
+            <span class="task-arrow">➔</span>
+          </div>
+           </div>
+      </div>
+    </section>
+
+    <section class="task-group">
+      <h2 class="group-title">Histórico de Conclusão</h2>
+      <div class="task-list">
+        
+        <div class="task-item-wrap completed">
+          <div class="task-item" onclick="this.parentElement.classList.toggle('active')">
+            <span class="task-bullet done"></span>
+            <span class="task-text">Entrega de Termo de Compromisso (TCE)</span>
+            <span class="task-arrow">➔</span>
+          </div>
+          <div class="task-detail-content">
+            <header class="task-header">
+                <span class="category-tag" style="background: rgba(34, 197, 94, 0.1); color: var(--success);">RH / Integração</span>
+                <div class="task-meta">
+                    <span><strong>Concluído em:</strong> 05 de Maio, 2026</span>
+                    <span class="status-badge-done">Aprovado</span>
+                </div>
+            </header>
+            <div class="detail-grid">
+                <div class="detail-card main-info" style="grid-column: 1 / -1;">
+                    <h2>Detalhes da Conclusão</h2>
+                    <p>O arquivo do TCE foi recebido e validado com sucesso pelo departamento de Recursos Humanos.</p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</main>
+</body>
+</html>

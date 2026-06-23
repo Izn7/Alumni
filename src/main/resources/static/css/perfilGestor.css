@@ -1,0 +1,126 @@
+:root {
+    --orange: #f97316;
+    --bg-dark: #050505;
+    --card-bg: rgba(13, 13, 13, 0.9);
+    --border: rgba(255, 255, 255, 0.08);
+    --text-muted: #666;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-dark);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.dark-overlay {
+    position: fixed; top: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(249, 115, 22, 0.05), transparent);
+    z-index: -1;
+}
+
+/* NAVBAR (100px conforme dashboard) */
+.navbar-alumni {
+    height: 100px;
+    position: fixed; top: 0; width: 100%;
+    display: flex; align-items: center;
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+}
+
+.nav-wrapper-full {
+    display: flex; justify-content: space-between; 
+    width: 100%; padding: 0 40px; align-items: center;
+}
+
+.btn-back {
+    color: #fff; text-decoration: none; font-weight: 800; font-size: 0.75rem;
+    letter-spacing: 1px; transition: 0.3s; padding: 10px 20px;
+    background: rgba(255,255,255,0.05); border-radius: 8px;
+}
+
+.btn-back:hover { background: var(--orange); }
+
+.brand-center { display: flex; align-items: center; gap: 10px; }
+.logo-img { height: 45px; }
+.logo-name { font-weight: 800; font-size: 1.4rem; color: var(--orange); letter-spacing: 2px; }
+
+.user-name-top { font-weight: 600; font-size: 0.9rem; color: #888; }
+
+/* CONTEÚDO PERFIL */
+.main-content { padding-top: 150px; padding-bottom: 50px; }
+
+.perfil-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 40px;
+    padding: 60px 40px;
+    backdrop-filter: blur(20px);
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+}
+
+.big-avatar {
+    position: relative; width: 160px; height: 160px; margin: 0 auto 25px;
+}
+
+.big-avatar img {
+    width: 100%; height: 100%; border-radius: 50%;
+    border: 3px solid var(--orange); object-fit: cover;
+    box-shadow: 0 0 30px rgba(249, 115, 22, 0.2);
+}
+
+.btn-edit-photo {
+    position: absolute; bottom: 5px; right: 5px;
+    background: var(--orange); border: none; border-radius: 50%;
+    width: 45px; height: 45px; cursor: pointer; font-size: 1.2rem;
+    transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.btn-edit-photo:hover { transform: scale(1.1); filter: brightness(1.1); }
+
+.badge-role {
+    background: rgba(249, 115, 22, 0.15); color: var(--orange);
+    padding: 6px 16px; border-radius: 100px; font-weight: 800;
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px;
+}
+
+.perfil-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 40px; text-align: left; margin: 50px 0;
+}
+
+.info-group label {
+    display: block; font-size: 0.65rem; font-weight: 800;
+    color: var(--text-muted); text-transform: uppercase;
+    margin-bottom: 8px; letter-spacing: 1px;
+}
+
+.info-group p { font-size: 1.1rem; font-weight: 600; color: #eee; }
+
+/* BOTÃO ALTERAR SENHA */
+.perfil-actions { margin-top: 20px; }
+
+.btn-change-password {
+    display: inline-block; text-decoration: none;
+    background: transparent; border: 2px solid #ff4444;
+    color: #ff4444; padding: 18px 40px; border-radius: 15px;
+    font-weight: 800; font-size: 0.8rem; letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn-change-password:hover {
+    background: #ff4444; color: #fff;
+    box-shadow: 0 10px 20px rgba(255, 68, 68, 0.2);
+}
+
+@media (max-width: 600px) {
+    .perfil-grid { grid-template-columns: 1fr; gap: 25px; }
+    .navbar-alumni { padding: 0 20px; }
+    .user-name-top { display: none; }
+}

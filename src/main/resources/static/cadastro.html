@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta | ALUMNI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body>
+
+<div class="amb"></div>
+
+<div class="layout">
+    <aside class="visual">
+        <div class="v-logo">
+            <img src="img/GDE SENAI.png" alt="ALUMNI" class="logo-img" style="height:38px;width:auto;display:block"></div>
+
+        <div class="v-mid">
+            <div class="v-badge">Crie sua conta ALUMNI</div>
+            <h1>Dados Pessoais<br>e de<br><span class="h1-grad">Acesso.</span></h1>
+            <p>Preencha as informações abaixo para configurar seu perfil no ecossistema ALUMNI.</p>
+
+            <div class="steps-visual">
+                <div class="sv-item">
+                    <div class="sv-num done">✓</div>
+                    <div class="sv-info">
+                        <div class="sv-title">Escolha seu perfil</div>
+                        <div class="sv-desc">Concluído</div>
+                    </div>
+                </div>
+                <div class="sv-item">
+                    <div class="sv-num active">2</div>
+                    <div class="sv-info">
+                        <div class="sv-title active-t">Dados e Senha</div>
+                        <div class="sv-desc">Informações pessoais e segurança</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="v-quote">
+            <blockquote>"A senha estipulada pela empresa é o seu primeiro acesso seguro ao portal."</blockquote>
+            <div class="v-author">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="">
+                <div>
+                    <strong>Suporte ALUMNI</strong>
+                    <span>Segurança da Informação</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="form-side">
+        <a href="index.html" class="form-back">
+            <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Voltar para início
+        </a>
+
+        <div class="step active">
+            <div class="step-hd">
+                <p class="step-eyebrow">Passo Único</p>
+                <h2>Seus Dados</h2>
+                <p>Insira seus dados pessoais e a credencial fornecida.</p>
+            </div>
+
+            <form action="gestao.html" method="POST" class="fields">
+                <div class="field-2">
+                    <div class="field">
+                        <label class="lbl">Nome</label>
+                        <input class="inp" type="text" name="nome" placeholder="Rafael" required>
+                    </div>
+                    <div class="field">
+                        <label class="lbl">Sobrenome</label>
+                        <input class="inp" type="text" name="sobrenome" placeholder="Richard" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="lbl">E-mail Institucional</label>
+                    <input class="inp" type="email" name="email" placeholder="seu.nome@senaimg.com.br" required>
+                </div>
+
+                <div class="field">
+                    <label class="lbl">CPF</label>
+                    <input class="inp" type="text" name="cpf" placeholder="000.000.000-00" required>
+                </div>
+
+                <div class="field">
+                    <label class="lbl">Senha Estipulada pela Empresa</label>
+                    <input class="inp" type="password" name="password" placeholder="Digite a senha fornecida" required>
+                </div>
+
+                <div class="nav-btns" style="margin-top:24px">
+                    <button type="submit" class="btn-next">
+                        Finalizar Cadastro
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

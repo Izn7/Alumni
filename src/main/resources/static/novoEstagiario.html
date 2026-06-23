@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Novo Estagiário | ALUMNI Corporate</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="css/novoEstagiario.css">
+
+
+</head>
+<body>
+<div class="amb"></div>
+<div class="layout">
+
+  <!-- VISUAL -->
+  <aside class="visual">
+    <div class="v-logo">
+      <img src="img/GDE SENAI.png" alt="ALUMNI" class="logo-img" style="height:38px;width:auto;display:block"></div>
+    <div class="v-mid">
+      <div class="v-badge">Cadastro de Estagiário</div>
+      <h1>Adicione um<br>novo <span class="h1-grad">talento</span><br>à plataforma.</h1>
+      <p>Preencha os dados do estagiário. O RE será gerado automaticamente e o acesso criado em segundos.</p>
+      <div class="v-flow">
+        <div class="v-step">
+          <div class="vs-num">1</div>
+          <div class="vs-info">
+            <div class="vs-title">Dados pessoais e acadêmicos</div>
+            <div class="vs-desc">Nome, CPF, curso e e-mail educacional</div>
+          </div>
+        </div>
+        <div class="v-step">
+          <div class="vs-num">2</div>
+          <div class="vs-info">
+            <div class="vs-title">Dados do estágio</div>
+            <div class="vs-desc">Área, gestor responsável e datas</div>
+          </div>
+        </div>
+        <div class="v-step">
+          <div class="vs-num">3</div>
+          <div class="vs-info">
+            <div class="vs-title">Acesso criado</div>
+            <div class="vs-desc">RE gerado e e-mail de boas-vindas enviado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="v-foot">© 2026 ALUMNI · SENAI CEDETEM</p>
+  </aside>
+
+  <!-- FORM -->
+  <main class="form-side">
+    <a href="verTodosEstagiarios.html" class="form-back">
+      <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Voltar para Lista
+    </a>
+
+    <div class="form-hd">
+      <h2>Novo Estagiário</h2>
+      <p>Preencha as informações para cadastrar um novo talento na plataforma.</p>
+    </div>
+
+    <form class="fields" onsubmit="return false">
+
+      <!-- TCE GERADO -->
+      <div class="tce-preview">
+        <div>
+          <div class="tce-label">Código TCE gerado automaticamente</div>
+          <div class="tce-code">RE-331750</div>
+        </div>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--o)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+
+      <!-- FOTO -->
+      <div class="form-section">
+        <div class="section-label">Foto de Perfil</div>
+        <div class="avatar-upload">
+          <div class="av-preview">👤</div>
+          <div class="av-info">
+            <p>Foto do Estagiário</p>
+            <span>JPG, PNG ou WEBP · Máx. 5MB</span>
+          </div>
+          <button type="button" class="btn-upload">Escolher Foto</button>
+        </div>
+      </div>
+
+      <!-- DADOS PESSOAIS -->
+      <div class="form-section">
+        <div class="section-label">Dados Pessoais</div>
+        <div class="grid2">
+          <div class="field">
+            <label class="lbl">Nome</label>
+            <input class="inp" type="text" placeholder="Rafael">
+          </div>
+          <div class="field">
+            <label class="lbl">Sobrenome</label>
+            <input class="inp" type="text" placeholder="Richard">
+          </div>
+        </div>
+        <div class="field">
+          <label class="lbl">E-mail Educacional</label>
+          <input class="inp" type="email" placeholder="rafael.richard@aluno.senai.br">
+          <span class="inp-hint">Deve ser o e-mail institucional da escola/faculdade.</span>
+        </div>
+        <div class="grid2">
+          <div class="field">
+            <label class="lbl">CPF</label>
+            <input class="inp" type="text" placeholder="000.000.000-00" maxlength="14">
+          </div>
+          <div class="field">
+            <label class="lbl">Data de Nascimento</label>
+            <input class="inp" type="date">
+          </div>
+        </div>
+      </div>
+
+      <!-- DADOS ACADÊMICOS -->
+      <div class="form-section">
+        <div class="section-label">Dados Acadêmicos</div>
+        <div class="field">
+          <label class="lbl">Instituição de Ensino</label>
+          <input class="inp" type="text" placeholder="SENAI CEDETEM">
+        </div>
+        <div class="grid2">
+          <div class="field">
+            <label class="lbl">Curso</label>
+            <select class="inp">
+              <option value="" disabled selected>Selecione o curso</option>
+              <option>Análise e Desenvolvimento de Sistemas</option>
+              <option>Redes de Computadores</option>
+              <option>Automação Industrial</option>
+              <option>Mecânica Industrial</option>
+              <option>Eletrotécnica</option>
+              <option>Administração</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="lbl">Semestre / Período</label>
+            <select class="inp">
+              <option value="" disabled selected>Selecione</option>
+              <option>1º Semestre</option>
+              <option>2º Semestre</option>
+              <option>3º Semestre</option>
+              <option>4º Semestre</option>
+              <option>5º Semestre</option>
+              <option>6º Semestre</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- DADOS DO ESTÁGIO -->
+      <div class="form-section">
+        <div class="section-label">Dados do Estágio</div>
+        <div class="field">
+          <label class="lbl">Área / Cargo</label>
+          <input class="inp" type="text" placeholder="Assistente de T.I">
+        </div>
+        <div class="field">
+          <label class="lbl">Gestor Responsável</label>
+          <select class="inp">
+            <option value="" disabled selected>Selecione o gestor</option>
+            <option>Marcos Silva — T.I & Inovação</option>
+            <option>Ana Paula Souza — Recursos Humanos</option>
+            <option>Roberto Mendes — Produção</option>
+            <option>Carla Lemos — Marketing Digital</option>
+            <option>Fernando Gomes — Manutenção</option>
+            <option>Juliana Paes — Administrativo</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="lbl">Unidade SENAI</label>
+          <select class="inp">
+            <option value="" disabled selected>Selecione a unidade</option>
+            <option>SENAI CEDETEM — Contagem</option>
+            <option>SENAI Belo Horizonte</option>
+            <option>SENAI Betim</option>
+            <option>SENAI FIEMG</option>
+          </select>
+        </div>
+        <div class="grid2">
+          <div class="field">
+            <label class="lbl">Início do Estágio</label>
+            <input class="inp" type="date">
+          </div>
+          <div class="field">
+            <label class="lbl">Previsão de Término</label>
+            <input class="inp" type="date">
+          </div>
+        </div>
+        <div class="field">
+          <label class="lbl">Carga Horária Semanal</label>
+          <select class="inp">
+            <option value="" disabled selected>Selecione</option>
+            <option>20h semanais (manhã)</option>
+            <option>20h semanais (tarde)</option>
+            <option>30h semanais</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- BOTÕES -->
+      <div class="form-footer-btns">
+        <button type="submit" class="btn-submit">CADASTRAR ESTAGIÁRIO</button>
+        <a href="verTodosEstagiarios.html" class="btn-cancel">Cancelar</a>
+      </div>
+
+    </form>
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+:root {
+    --orange: #f97316;
+    --dark: #030303;
+    --card: rgba(12, 12, 12, 0.95);
+    --border: rgba(255, 255, 255, 0.05);
+    --text-dim: #666666;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    background: var(--dark); 
+    color: #fff; 
+    line-height: 1.6;
+}
+
+.glass-bg {
+    position: fixed; top: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 100% 100%, rgba(249, 115, 22, 0.08), transparent);
+    z-index: -1;
+}
+
+/* NAVBAR */
+.navbar-alumni {
+    height: 100px; padding: 0 5%; border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(20px); background: rgba(0,0,0,0.8);
+    display: flex; align-items: center; position: sticky; top: 0; z-index: 1000;
+}
+.brand-link { text-decoration: none; color: inherit; display: flex; align-items: center; gap: 15px; }
+.logo-img { height: 45px; }
+.alumni-logo { font-weight: 800; font-size: 1.6rem; letter-spacing: 1px; }
+.alumni-logo small { font-size: 0.6rem; color: var(--orange); border: 1px solid var(--orange); padding: 2px 6px; border-radius: 4px; margin-left: 10px; text-transform: uppercase; }
+
+/* HEADER */
+.main-content { max-width: 1300px; margin: 50px auto; padding: 0 30px; }
+.page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px; flex-wrap: wrap; gap: 30px; }
+.header-text h1 { font-size: 3.2rem; font-weight: 800; letter-spacing: -2px; }
+.gradient-text { background: linear-gradient(to right, #fff, var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.header-text p { color: var(--text-dim); font-weight: 600; }
+
+/* ACTIONS */
+.header-actions { display: flex; gap: 15px; align-items: center; }
+.search-box input {
+    background: #0a0a0a; border: 1px solid var(--border); padding: 14px 25px;
+    border-radius: 14px; color: #fff; width: 320px; outline: none;
+    font-family: 'Plus Jakarta Sans', sans-serif; transition: 0.3s;
+}
+.search-box input:focus { border-color: var(--orange); box-shadow: 0 0 20px rgba(249, 115, 22, 0.1); }
+
+.btn-add {
+    background: var(--orange); color: #fff; border: none; padding: 14px 28px;
+    border-radius: 14px; font-weight: 800; font-size: 0.75rem; letter-spacing: 1px;
+    cursor: pointer; transition: 0.4s;
+}
+.btn-add:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3); }
+
+/* GRID DE ESTAGIÁRIOS */
+.estagiarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 25px;
+}
+
+.talent-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    padding: 30px;
+    position: relative;
+    transition: 0.4s ease;
+}
+.talent-card:hover { border-color: var(--orange); transform: translateY(-8px); }
+
+.talent-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+.avatar-box {
+    width: 50px; height: 50px; background: #111; border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; color: var(--orange); border: 1px solid var(--border);
+}
+.talent-info h3 { font-size: 1.1rem; font-weight: 800; }
+.talent-info span { font-size: 0.75rem; color: var(--text-dim); font-weight: 600; }
+
+.status-badge {
+    position: absolute; top: 30px; right: 30px;
+    font-size: 0.6rem; font-weight: 800; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 6px; letter-spacing: 1px;
+}
+.status-badge.online { background: rgba(68, 255, 68, 0.1); color: #44ff44; }
+.status-badge.warning { background: rgba(255, 170, 0, 0.1); color: #ffaa00; }
+
+.mentor-info { margin-bottom: 20px; padding: 12px 18px; background: rgba(255,255,255,0.02); border-radius: 12px; }
+.mentor-info label { display: block; font-size: 0.6rem; color: #444; font-weight: 800; text-transform: uppercase; margin-bottom: 4px; }
+.mentor-info p { font-size: 0.85rem; font-weight: 700; color: #ddd; }
+
+.talent-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px;
+}
+.t-stat { text-align: center; padding: 15px; background: rgba(0,0,0,0.2); border-radius: 20px; border: 1px solid var(--border); }
+.t-stat label { display: block; font-size: 0.6rem; color: #444; font-weight: 800; text-transform: uppercase; margin-bottom: 5px; }
+.t-stat strong { font-size: 1.3rem; font-weight: 800; }
+.orange-text { color: var(--orange); }
+
+.talent-footer { display: flex; }
+.btn-primary {
+    flex: 1; background: #fff; color: #000; border: none;
+    padding: 14px; border-radius: 12px; font-size: 0.8rem;
+    font-weight: 800; cursor: pointer; transition: 0.3s;
+}
+.btn-primary:hover { background: var(--orange); color: #fff; }
+
+@media (max-width: 900px) {
+    .estagiarios-grid { grid-template-columns: 1fr; }
+    .search-box input { width: 100%; }
+}

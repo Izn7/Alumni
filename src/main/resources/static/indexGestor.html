@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | ALUMNI Gestor</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/indexGestor.css">
+</head>
+<body>
+
+<div class="amb"></div>
+
+<nav class="nav">
+  <div class="nav-in">
+    <div style="display:flex;align-items:center;gap:14px">
+      <button style="background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px" onclick="document.getElementById('sb').classList.toggle('open');document.getElementById('sov').classList.toggle('open')" aria-label="Menu">
+        <span style="width:20px;height:2px;background:var(--o);border-radius:4px;display:block"></span>
+        <span style="width:20px;height:2px;background:var(--o);border-radius:4px;display:block"></span>
+        <span style="width:20px;height:2px;background:var(--o);border-radius:4px;display:block"></span>
+      </button>
+      <a href="indexGestor.html" class="nav-logo">
+        <img src="img/GDE SENAI.png" alt="ALUMNI" class="logo-img" style="height:38px;width:auto;display:block"></a>
+    </div>
+    <nav class="nav-tabs">
+      <a href="indexGestor.html" class="ntab on">Visão Geral</a>
+      <a href="gestao.html" class="ntab">Estagiários</a>
+      <a href="cadastrarTarefas.html" class="ntab">Tarefas</a>
+    </nav>
+    <a href="perfilGestor.html" class="nav-user">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="">
+      <div><div class="nu-name">Fernando Gomes</div><div class="nu-role">Gestor</div></div>
+    </a>
+  </div>
+</nav>
+
+<div class="sov" id="sov" onclick="document.getElementById('sb').classList.remove('open');this.classList.remove('open')"></div>
+<aside class="sidebar" id="sb">
+  <nav class="snav">
+    <a href="indexGestor.html" class="on">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Visão Geral
+    </a>
+    <a href="gestao.html">
+      <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Gestão de Estagiários
+    </a>
+    <a href="cadastrarTarefas.html">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+      Cadastrar Tarefas
+    </a>
+    <div class="sdiv"></div>
+    <a href="perfilGestor.html">
+      <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Meu Perfil
+    </a>
+    <a href="index.html" class="logout">
+      <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      Sair do Sistema
+    </a>
+  </nav>
+</aside>
+
+<main class="main">
+  <div class="container">
+
+    <header class="pg-hd">
+      <div>
+        <p class="pg-date">Segunda-feira, 9 de maio de 2026</p>
+        <h1 class="pg-title">Painel de <span>Controle.</span></h1>
+        <p class="pg-sub">Gestão estratégica de talentos e conformidade de estágio.</p>
+      </div>
+      <a href="editarTarefas.html" class="btn-new">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Editar Tarefas
+      </a>
+    </header>
+
+    <div class="kpi-strip">
+      <div class="kpi">
+        <span class="kpi-ic">👥</span>
+        <div><div class="kpi-val">6</div><div class="kpi-lbl">Estagiários Ativos</div></div>
+      </div>
+      <div class="kpi">
+        <span class="kpi-ic">📋</span>
+        <div><div class="kpi-val" style="color:var(--warning)">5</div><div class="kpi-lbl">Relatórios Pendentes</div></div>
+      </div>
+      <div class="kpi">
+        <span class="kpi-ic">📈</span>
+        <div><div class="kpi-val" style="color:var(--success)">9.4</div><div class="kpi-lbl">Média Geral</div></div>
+      </div>
+      <div class="kpi">
+        <span class="kpi-ic">✅</span>
+        <div><div class="kpi-val">88%</div><div class="kpi-lbl">Taxa de Conclusão</div></div>
+      </div>
+    </div>
+
+    <div class="bento">
+
+      <a href="gestao.html" class="bc span2 hoverable cta-card">
+        <span class="badge badge-o">Acesso Direto</span>
+        <h2>Gestão de<br>Estagiários</h2>
+        <p>Visualize, acompanhe e gerencie todos os estagiários ativos na sua unidade em tempo real.</p>
+        <div class="cta-arrow">
+          Explorar Portal
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="cta-bg-icon">👥</div>
+      </a>
+
+      <div class="bc">
+        <span class="badge badge-w" style="margin-bottom:14px">Urgente</span>
+        <div class="card-lbl">Relatórios</div>
+        <div class="pending-num">05</div>
+        <a href="gestao.html" style="font-size:.75rem;font-weight:800;color:var(--o)">Ver detalhes →</a>
+      </div>
+
+      <div class="bc">
+        <span class="badge badge-s" style="margin-bottom:14px">Insights</span>
+        <div class="card-lbl">Performance</div>
+        <div class="perf-num">9.4</div>
+        <div class="perf-lbl">Média da Equipe</div>
+        <div class="prog"><div class="prog-fill" style="width:94%"></div></div>
+      </div>
+
+      <div class="bc">
+        <div class="card-lbl">Documentação</div>
+        <p style="font-size:.8rem;color:var(--t2);margin-bottom:12px">Contratos e Aditivos</p>
+        <div class="doc-list">
+          <div class="doc-item">📄 TCE-992341_Rafael.pdf</div>
+          <div class="doc-item">📄 TCE-884210_Ian.pdf</div>
+          <div class="doc-item">📄 TCE-773190_João.pdf</div>
+        </div>
+      </div>
+
+      <div class="bc span4">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+          <div class="card-lbl" style="margin-bottom:0">Atividade Recente</div>
+          <a href="gestao.html" style="font-size:.72rem;font-weight:800;color:var(--o)">Ver todos →</a>
+        </div>
+        <div class="act-list">
+          <div class="act-item">
+            <div class="act-dot" style="background:var(--success)"></div>
+            <div class="act-txt">
+              <strong>Rafael Richard</strong> concluiu "Manutenção de Servidores"
+              <span class="act-time">há 2 horas</span>
+            </div>
+            <a href="detalhes.html" class="act-link">Ver →</a>
+          </div>
+          <div class="act-item">
+            <div class="act-dot" style="background:var(--warning)"></div>
+            <div class="act-txt">
+              <strong>Ian Pablo</strong> tem relatório vencendo amanhã
+              <span class="act-time">há 4 horas</span>
+            </div>
+            <a href="detalhes.html" class="act-link">Ver →</a>
+          </div>
+          <div class="act-item">
+            <div class="act-dot" style="background:var(--o)"></div>
+            <div class="act-txt">
+              <strong>João Pedro</strong> enviou autoavaliação de desempenho
+              <span class="act-time">há 1 dia</span>
+            </div>
+            <a href="detalhes.html" class="act-link">Ver →</a>
+          </div>
+          <div class="act-item">
+            <div class="act-dot" style="background:var(--success)"></div>
+            <div class="act-txt">
+              <strong>Bernardo Carvalho</strong> atualizou documentos do TCE
+              <span class="act-time">há 2 dias</span>
+            </div>
+            <a href="detalhes.html" class="act-link">Ver →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

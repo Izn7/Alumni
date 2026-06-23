@@ -1,0 +1,16 @@
+.field-2 {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+
+.field-2 .field {
+    flex: 1;
+}
+
+@media (max-width: 480px) {
+    .field-2 {
+        flex-direction: column;
+        gap: 0;
+    }
+}
