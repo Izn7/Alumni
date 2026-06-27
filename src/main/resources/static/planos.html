@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planos e Precificação | ALUMNI</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/planos.css">
+
+
+</head>
+<body>
+
+<div class="amb"></div>
+
+<div class="layout">
+
+  <aside class="visual">
+    <div class="v-top">
+      <div class="v-logo">
+        <img src="img/GDE SENAI.png" alt="ALUMNI" class="logo-img" style="height:38px;width:auto;display:block">
+      </div>
+      <div class="v-badge">
+        <span class="v-badge-dot"></span>
+        Precificação Inteligente
+      </div>
+      <h1>O tamanho ideal<br>para a sua<br><span class="h1-grad">Operação.</span></h1>
+      <p>Pague apenas pelas contas de gestores que utilizam a plataforma. Estagiários e Alunos possuem acesso 100% gratuito.</p>
+      
+      <div class="v-stats">
+        <div class="v-stat">
+          <strong>+150</strong>
+          <span>Empresas Ativas</span>
+        </div>
+        <div class="v-stat">
+          <strong>-40%</strong>
+          <span>Tempo de Triagem</span>
+        </div>
+        <div class="v-stat">
+          <strong>99.9%</strong>
+          <span>De Retenção</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="v-quote">
+      <blockquote>"A transição para o modelo corporativo por usuário do ALUMNI reduziu drasticamente nossos custos com gestão de contratos de estágio."</blockquote>
+      <div class="v-author">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="">
+        <div>
+          <strong>Juliana Meireles</strong>
+          <span>Diretora de RH · TechCorp</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="form-side">
+    <div class="form-wrap">
+
+      <a href="index.html" class="form-back">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Voltar para início
+      </a>
+
+      <div class="form-hd">
+        <h2>Planos Disponíveis</h2>
+        <p>Selecione a melhor opção e solicite o contacto comercial</p>
+      </div>
+
+      <form id="plan-form" action="#" method="POST">
+        <div class="fields">
+
+          <div class="plans-stack">
+            
+            <label class="plan-card">
+              <div class="plan-header">
+                <div class="plan-title">
+                  <input type="radio" name="plano_selecionado" value="start" checked style="accent-color: var(--orange)">
+                  🌱 Start
+                </div>
+                <div class="plan-price">
+                  R$ 29
+                  <span>por usuário / mês</span>
+                </div>
+              </div>
+              <ul class="plans-stack plan-features-list">
+                <li class="plan-feature-item"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Até 15 vagas ativas</li>
+                <li class="plan-feature-item"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Triagem de currículos padrão</li>
+                <li class="plan-feature-item"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Suporte por e-mail (24h)</li>
+              </ul>
+            </label>
+
+            <label class="plan-card featured">
+              <div class="plan-header">
+                <div class="plan-title">
+                  <input type="radio" name="plano_selecionado" value="pro" style="accent-color: var(--orange)">
+                  🚀 Pro
+                  <span class="plan-badge">Popular</span>
+                </div>
+                <div class="plan-price">
+                  R$ 59
+                  <span>por usuário / mês</span>
+                </div>
+              </div>
+              <ul class="plans-stack plan-features-list">
+                <li class="plan-feature-item"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Vagas e publicações ilimitadas</li>
+                <li class="plan-feature-item"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Filtros de I.A. para candidatos</li>
+                <li class="plan-feature-item"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Gestão completa de Documentação</li>
+                <li class="plan-feature-item"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Suporte via WhatsApp</li>
+              </ul>
+            </label>
+
+            <label class="plan-card">
+              <div class="plan-header">
+                <div class="plan-title">
+                  <input type="radio" name="plano_selecionado" value="enterprise" style="accent-color: var(--orange)">
+                  🏢 Enterprise
+                </div>
+                <div class="plan-price">
+                  Sob consulta
+                  <span>Preço customizado</span>
+                </div>
+              </div>
+              <ul class="plans-stack plan-features-list">
+                <li class="plan-feature-item"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Usuários e Gestores ilimitados</li>
+                <li class="plan-feature-item"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Integração via API dedicada</li>
+                <li class="plan-feature-item"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Gerente de Conta exclusivo</li>
+              </ul>
+            </label>
+
+          </div>
+
+          <div class="field">
+            <label class="lbl" for="email-billing">E-mail Corporativo</label>
+            <input class="inp" type="email" id="email-billing" placeholder="rh@suaempresa.com" required>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            <span>SOLICITAR CONTATO COMERCIAL</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+
+          <p class="form-footer" style="margin-top: 10px;">
+            Dúvidas sobre faturamento? 
+            <a href="mailto:suporte@alumni.com">Falar com o suporte</a>
+          </p>
+
+        </div>
+      </form>
+
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

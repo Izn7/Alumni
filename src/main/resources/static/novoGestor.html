@@ -1,161 +1,107 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Novo Gestor | ALUMNI Corporate</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="css/novoGestor.css">
-</head>
-<body>
-<div class="amb"></div>
-<div class="layout">
+<form id="formGestor" class="fields" onsubmit="return false">
 
-  <!-- VISUAL -->
-  <aside class="visual">
-    <div class="v-logo">
-      <img src="img/GDE SENAI.png" alt="ALUMNI" class="logo-img" style="height:38px;width:auto;display:block"></div>
-    <div class="v-mid">
-      <div class="v-badge">Cadastro de Gestor</div>
-      <h1>Adicione um<br>novo <span class="h1-grad">líder</span><br>à plataforma.</h1>
-      <p>Preencha os dados do gestor. Ele receberá um e-mail de boas-vindas com as instruções de acesso.</p>
-      <div class="v-checks">
-        <div class="v-check">
-          <div class="vc-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <span class="vc-text">Acesso ao painel de gestão criado automaticamente</span>
-        </div>
-        <div class="v-check">
-          <div class="vc-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <span class="vc-text">E-mail de boas-vindas enviado com credenciais</span>
-        </div>
-        <div class="v-check">
-          <div class="vc-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <span class="vc-text">Perfil visível imediatamente no painel corporativo</span>
-        </div>
+  <!-- FOTO -->
+  <div class="form-section">
+    <div class="section-label">Foto de Perfil</div>
+    <div class="avatar-upload">
+      <div class="av-preview">👤</div>
+      <div class="av-info">
+        <p>Foto do Gestor</p>
+        <span>JPG, PNG ou WEBP · Máx. 5MB</span>
+      </div>
+      <input id="fotoPerfil" type="hidden">
+      <button type="button" class="btn-upload">Escolher Foto</button>
+    </div>
+  </div>
+
+  <!-- DADOS PESSOAIS -->
+  <div class="form-section">
+    <div class="section-label">Dados Pessoais</div>
+
+    <div class="grid2">
+      <div class="field">
+        <label class="lbl">Nome</label>
+        <input id="nome" class="inp" type="text" placeholder="Fernando">
+      </div>
+
+      <div class="field">
+        <label class="lbl">Sobrenome</label>
+        <input id="sobrenome" class="inp" type="text" placeholder="Gomes">
       </div>
     </div>
-    <p class="v-foot">© 2026 ALUMNI · SENAI CEDETEM</p>
-  </aside>
 
-  <!-- FORM -->
-  <main class="form-side">
-    <a href="verTodosGestores.html" class="form-back">
-      <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-      Voltar para Lista
+    <div class="field">
+      <label class="lbl">E-mail Corporativo</label>
+      <input id="email" class="inp" type="email" placeholder="fernando.gomes@senai.br">
+      <span class="inp-hint">Um e-mail de convite será enviado automaticamente.</span>
+    </div>
+
+    <div class="grid2">
+      <div class="field">
+        <label class="lbl">CPF</label>
+        <input id="cpf" class="inp" type="text" placeholder="000.000.000-00" maxlength="14">
+      </div>
+
+      <div class="field">
+        <label class="lbl">Telefone</label>
+        <input id="telefone" class="inp" type="text" placeholder="(31) 9 0000-0000">
+      </div>
+    </div>
+  </div>
+
+  <!-- DADOS PROFISSIONAIS -->
+  <div class="form-section">
+    <div class="section-label">Dados Profissionais</div>
+
+    <div class="field">
+      <label class="lbl">Cargo / Função</label>
+      <input id="cargo" class="inp" type="text" placeholder="Gestor de Operações de T.I">
+    </div>
+
+    <div class="grid2">
+      <div class="field">
+        <label class="lbl">Departamento / Área</label>
+        <select id="departamento" class="inp">
+          <option value="" disabled selected>Selecione a área</option>
+          <option>T.I & Inovação</option>
+          <option>Recursos Humanos</option>
+          <option>Produção Industrial</option>
+          <option>Marketing Digital</option>
+          <option>Administrativo</option>
+          <option>Manutenção</option>
+          <option>Qualidade</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEGURANÇA -->
+  <div class="form-section">
+    <div class="section-label">Segurança de Acesso ( DEFINIDA PELO USUÁRIO ! )</div>
+
+    <div class="grid2">
+      <div class="field">
+        <label class="lbl">Senha de Acesso</label>
+        <input id="senha" class="inp" type="password" placeholder="••••••••" minlength="8">
+        <span class="inp-hint">Mínimo de 8 caracteres.</span>
+      </div>
+
+      <div class="field">
+        <label class="lbl">Confirmar Senha</label>
+        <input id="confirmarSenha" class="inp" type="password" placeholder="••••••••" minlength="8">
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTÕES -->
+  <div class="form-footer-btns">
+    <button type="button" class="btn-submit" onclick="cadastrarGestor()">
+      CADASTRAR GESTOR
+    </button>
+
+    <a href="painelEmpresa.html" class="btn-cancel">
+      Cancelar
     </a>
+  </div>
 
-    <div class="form-hd">
-      <h2>Novo Gestor</h2>
-      <p>Preencha as informações para cadastrar um novo gestor na plataforma.</p>
-    </div>
-
-    <form class="fields" onsubmit="return false">
-
-      <!-- FOTO -->
-      <div class="form-section">
-        <div class="section-label">Foto de Perfil</div>
-        <div class="avatar-upload">
-          <div class="av-preview">👤</div>
-          <div class="av-info">
-            <p>Foto do Gestor</p>
-            <span>JPG, PNG ou WEBP · Máx. 5MB</span>
-          </div>
-          <button type="button" class="btn-upload">Escolher Foto</button>
-        </div>
-      </div>
-
-      <!-- DADOS PESSOAIS -->
-      <div class="form-section">
-        <div class="section-label">Dados Pessoais</div>
-        <div class="grid2">
-          <div class="field">
-            <label class="lbl">Nome</label>
-            <input class="inp" type="text" placeholder="Fernando">
-          </div>
-          <div class="field">
-            <label class="lbl">Sobrenome</label>
-            <input class="inp" type="text" placeholder="Gomes">
-          </div>
-        </div>
-        <div class="field">
-          <label class="lbl">E-mail Corporativo</label>
-          <input class="inp" type="email" placeholder="fernando.gomes@senai.br">
-          <span class="inp-hint">Um e-mail de convite será enviado automaticamente.</span>
-        </div>
-        <div class="grid2">
-          <div class="field">
-            <label class="lbl">CPF</label>
-            <input class="inp" type="text" placeholder="000.000.000-00" maxlength="14">
-          </div>
-          <div class="field">
-            <label class="lbl">Telefone</label>
-            <input class="inp" type="text" placeholder="(31) 9 0000-0000">
-          </div>
-        </div>
-      </div>
-
-      <!-- DADOS PROFISSIONAIS -->
-      <div class="form-section">
-        <div class="section-label">Dados Profissionais</div>
-        <div class="field">
-          <label class="lbl">Cargo / Função</label>
-          <input class="inp" type="text" placeholder="Gestor de Operações de T.I">
-        </div>
-        <div class="grid2">
-          <div class="field">
-            <label class="lbl">Departamento / Área</label>
-            <select class="inp">
-              <option value="" disabled selected>Selecione a área</option>
-              <option>T.I & Inovação</option>
-              <option>Recursos Humanos</option>
-              <option>Produção Industrial</option>
-              <option>Marketing Digital</option>
-              <option>Administrativo</option>
-              <option>Manutenção</option>
-              <option>Qualidade</option>
-            </select>
-          </div>
-          <div class="field">
-            <label class="lbl">Nível</label>
-            <select class="inp">
-              <option value="" disabled selected>Selecione</option>
-              <option>Gestor Júnior</option>
-              <option>Gestor Pleno</option>
-              <option>Gestor Sênior</option>
-              <option>Coordenador</option>
-            </select>
-          </div>
-        </div>
-        <div class="grid2">
-          <div class="field">
-            <label class="lbl">Unidade SENAI</label>
-            <select class="inp">
-              <option value="" disabled selected>Selecione a unidade</option>
-              <option>SENAI CEDETEM — Contagem</option>
-              <option>SENAI Belo Horizonte</option>
-              <option>SENAI Betim</option>
-              <option>SENAI FIEMG</option>
-            </select>
-          </div>
-          <div class="field">
-            <label class="lbl">Capacidade Máx. de Estagiários</label>
-            <input class="inp" type="number" placeholder="Ex: 15" min="1" max="50">
-          </div>
-        </div>
-        <div class="field">
-          <label class="lbl">Data de Admissão</label>
-          <input class="inp" type="date">
-        </div>
-      </div>
-
-      <!-- BOTÕES -->
-      <div class="form-footer-btns">
-        <button type="submit" class="btn-submit">CADASTRAR GESTOR</button>
-        <a href="verTodosGestores.html" class="btn-cancel">Cancelar</a>
-      </div>
-
-    </form>
-  </main>
-</div>
-</body>
-</html>
+</form>

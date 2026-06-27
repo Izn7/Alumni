@@ -6,6 +6,9 @@
 <title>Gestão de Estagiários | ALUMNI</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/gestao.css">
+<style>
+  
+</style>
 </head>
 <body>
 <div class="amb"></div>
@@ -47,19 +50,30 @@
 
 <main class="main">
   <div class="container">
-    <header class="pg-hd">
+    
+    <!-- CABEÇALHO CONTENDO O BOTÃO DE CADASTRO -->
+    <header class="hd-actions-row">
       <div>
         <h1 class="pg-title">Gestão de <span>Estagiários</span></h1>
         <p class="pg-sub">Painel de controle de contratos e entregas técnicas.</p>
       </div>
-      <div class="filters">
-        <div class="search-box">
-          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input class="search-inp" type="text" placeholder="Buscar estagiário...">
+      
+      <div class="right-controls">
+        <div class="filters">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input class="search-inp" type="text" placeholder="Buscar estagiário...">
+          </div>
+          <span class="filter-btn on">Todos</span>
+          <span class="filter-btn">Ativos</span>
+          <span class="filter-btn">Pendentes</span>
         </div>
-        <span class="filter-btn on">Todos</span>
-        <span class="filter-btn">Ativos</span>
-        <span class="filter-btn">Pendentes</span>
+
+        <!-- BOTÃO COMPATÍVEL QUE DIRECIONA PARA O CADASTRO DE ESTAGIÁRIO -->
+        <a href="novoEstagiario.html?origem=gestor"  class="btn-add-talent">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Cadastrar Estagiário
+        </a>
       </div>
     </header>
 
@@ -69,7 +83,7 @@
         <div class="card-top">
           <div class="avatar-mini">👤</div>
           <div>
-            <div class="tce">TCE-992341</div>
+            <div class="tce">RE-992341</div>
             <div class="card-name">Rafael Richard</div>
             <span class="status-chip ativo">Ativo</span>
           </div>
@@ -93,7 +107,7 @@
         <div class="card-top">
           <div class="avatar-mini">👤</div>
           <div>
-            <div class="tce">TCE-884210</div>
+            <div class="tce">RE-884210</div>
             <div class="card-name">Ian Pablo</div>
             <span class="status-chip ativo">Ativo</span>
           </div>
@@ -117,7 +131,7 @@
         <div class="card-top">
           <div class="avatar-mini">👤</div>
           <div>
-            <div class="tce">TCE-773190</div>
+            <div class="tce">RE-773190</div>
             <div class="card-name">João Pedro</div>
             <span class="status-chip ativo">Ativo</span>
           </div>
@@ -141,7 +155,7 @@
         <div class="card-top">
           <div class="avatar-mini">👤</div>
           <div>
-            <div class="tce">TCE-662080</div>
+            <div class="tce">RE-662080</div>
             <div class="card-name">Bernardo Carvalho</div>
             <span class="status-chip pendente">Pendente</span>
           </div>
@@ -165,7 +179,7 @@
         <div class="card-top">
           <div class="avatar-mini">👤</div>
           <div>
-            <div class="tce">TCE-551970</div>
+            <div class="tce">RE-551970</div>
             <div class="card-name">Thiago Henrique</div>
             <span class="status-chip ativo">Ativo</span>
           </div>
@@ -189,7 +203,7 @@
         <div class="card-top">
           <div class="avatar-mini">👤</div>
           <div>
-            <div class="tce">TCE-440860</div>
+            <div class="tce">RE-440860</div>
             <div class="card-name">Pedro Alves</div>
             <span class="status-chip ativo">Ativo</span>
           </div>

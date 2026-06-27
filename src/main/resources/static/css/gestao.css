@@ -102,3 +102,54 @@ a{text-decoration:none;color:inherit}
   .pg-title{font-size:2rem}
   .cards-grid{grid-template-columns:1fr}
 }
+
+
+/* Estilização complementar para o botão de cadastro integrado */
+  .hd-actions-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .right-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn-add-talent {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 18px;
+    background: var(--o, #f97316);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: .78rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(249,115,22,.2);
+    transition: all .2s ease;
+    text-decoration: none;
+  }
+  .btn-add-talent:hover {
+    opacity: .9;
+    transform: translateY(-2px);
+    color: #fff;
+  }
+  .btn-add-talent svg {
+    width: 13px;
+    height: 13px;
+    stroke: #fff;
+    fill: none;
+    stroke-width: 2.5;
+  }
+  @media(max-width: 768px) {
+    .right-controls { width: 100%; flex-direction: column-reverse; align-items: stretch; }
+    .filters { width: 100%; justify-content: space-between; }
+    .btn-add-talent { justify-content: center; }
+  }

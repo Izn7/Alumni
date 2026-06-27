@@ -29,6 +29,38 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--dark); co
 
 /* PROFILE HEADER */
 .main-content { max-width: 1200px; margin: 40px auto; padding: 0 30px; }
+
+/* BOTÃO VOLTAR */
+
+.form-back{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:#fff;
+    text-decoration:none;
+    font-size:.92rem;
+    font-weight:600;
+    margin-bottom:28px;
+    transition:.25s;
+}
+
+.form-back:hover{
+    color:var(--orange);
+}
+
+.form-back svg{
+    width:18px;
+    height:18px;
+    stroke:currentColor;
+    fill:none;
+    stroke-width:2.5;
+    transition:.25s;
+}
+
+.form-back:hover svg{
+    transform:translateX(-4px);
+}
+
 .profile-header {
     background: var(--card); border: 1px solid var(--border); border-radius: 32px;
     padding: 40px; display: flex; justify-content: space-between; align-items: center;

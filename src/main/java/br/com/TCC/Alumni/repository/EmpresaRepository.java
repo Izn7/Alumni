@@ -9,4 +9,6 @@ import br.com.TCC.Alumni.entity.EmpresaEntity;
 public interface EmpresaRepository extends JpaRepository<EmpresaEntity, Integer>{
 
 	List<EmpresaEntity> findByCnpj(String cnpj);
+	
+	List<EmpresaEntity> findByNomeEmpresa(String nomeEmpresa);
 }

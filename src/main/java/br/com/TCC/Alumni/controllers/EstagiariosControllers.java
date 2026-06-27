@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.TCC.Alumni.entity.EstagiariosEntity;
-
 import br.com.TCC.Alumni.repository.EstagiariosRepository;
 
 
@@ -73,23 +72,23 @@ public class EstagiariosControllers {
 					
 					@PostMapping("/login")
 					public ResponseEntity<EstagiariosEntity> login(
-					        @RequestBody EstagiariosEntity EstagiariosLogin) {
+					        @RequestBody EstagiariosEntity gestorlogin) {
 
-					    // busca usuário por Ra
+					    // busca usuário por email
 					    Optional<EstagiariosEntity> estagiarios =
-					    		estagiariosRepository.findByRa(EstagiariosLogin.getRa());
+					    		estagiariosRepository.findByEmail(gestorlogin.getEmail());
 
 					    // se encontrou usuário, verifica senha
 					    if (estagiarios.isPresent()) {
 
-					    	EstagiariosEntity EstagiarioEncontrado = estagiarios.get();
+					    	EstagiariosEntity estagiariosEncontrado = estagiarios.get();
 
 					        // compara senha enviada com senha armazenada (hash)
 					        if (encoder.matches(
-					        		EstagiariosLogin.getSenha(),
-					                EstagiarioEncontrado.getSenha())) {
+					        		gestorlogin.getSenha(),
+					        		estagiariosEncontrado.getSenha())) {
 
-					            return ResponseEntity.ok(EstagiarioEncontrado);
+					            return ResponseEntity.ok(estagiariosEncontrado);
 					        }
 					    }
 

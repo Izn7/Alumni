@@ -42,4 +42,10 @@ public class EmpresaControllers {
 	private List<EmpresaEntity> buscarPorCnpj(@PathVariable String cnpj){
 		return empresaRepository.findByCnpj(cnpj);
 	}
+	
+	@GetMapping("/buscarPorCnpj/{nomeEmpresa}")
+	@ResponseStatus(HttpStatus.OK)
+	private List<EmpresaEntity> buscarPorNome(@PathVariable String nomeEmpresa){
+		return empresaRepository.findByNomeEmpresa(nomeEmpresa);
+	}
 }

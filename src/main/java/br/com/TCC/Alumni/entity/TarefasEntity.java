@@ -1,68 +1,130 @@
 package br.com.TCC.Alumni.entity;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.time.LocalDate;
 
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-//Definição da tabela
+import javax.persistence.*;
 
 @Entity
-@Table(name = "Tarefas")
-public class TarefasEntity {
+@Table(name = "tarefa")
+public class TarefasEntity implements Serializable {
 
-	
-	
-	@ManyToOne
-	@JoinColumn (name = "idGestor")
-	private GestorEntity Gestor;
-	
-	//atributos da tabela
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	private String titulo;
-	private Date dataHora;
-	private int pontos;
+    private static final long serialVersionUID = 1L;
 
-	
-	public int getPontos() {
-		return pontos;
-	}
-	public void setPontos(int pontos) {
-		this.pontos = pontos;
-	}
-	public String getTitulo() {
-		return titulo;
-	}
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-	public Date getDataHora() {
-		return dataHora;
-	}
-	public void setDataHora(Date dataHora) {
-		this.dataHora = dataHora;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public GestorEntity getGestor() {
-		return Gestor;
-	}
-	public void setGestor(GestorEntity gestor) {
-		Gestor = gestor;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-	
-	
+    @Column(nullable = false, length = 150)
+    private String nome;
+
+    @Column(nullable = false, length = 50)
+    private String categoria;
+
+    @Column(nullable = false, length = 20)
+    private String prioridade;
+
+    @Column(nullable = false, length = 20)
+    private String status;
+
+    @Column(nullable = false)
+    private LocalDate dataInicio;
+
+    @Column(nullable = false)
+    private LocalDate dataEntrega;
+
+    @Column
+    private Integer cargaHoraria;
+
+    @Column(length = 500)
+    private String descricao;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "estagiario_id", nullable = false)
+    private EstagiariosEntity estagiario;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getPrioridade() {
+        return prioridade;
+    }
+
+    public void setPrioridade(String prioridade) {
+        this.prioridade = prioridade;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public LocalDate getDataInicio() {
+        return dataInicio;
+    }
+
+    public void setDataInicio(LocalDate dataInicio) {
+        this.dataInicio = dataInicio;
+    }
+
+    public LocalDate getDataEntrega() {
+        return dataEntrega;
+    }
+
+    public void setDataEntrega(LocalDate dataEntrega) {
+        this.dataEntrega = dataEntrega;
+    }
+
+    public Integer getCargaHoraria() {
+        return cargaHoraria;
+    }
+
+    public void setCargaHoraria(Integer cargaHoraria) {
+        this.cargaHoraria = cargaHoraria;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public EstagiariosEntity getEstagiario() {
+        return estagiario;
+    }
+
+    public void setEstagiario(EstagiariosEntity estagiario) {
+        this.estagiario = estagiario;
+    }
+
+    public static long getSerialversionuid() {
+        return serialVersionUID;
+    }
+
 }

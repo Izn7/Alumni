@@ -7,7 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -28,9 +27,6 @@ public class TarefasConcluidasEntity {
 
 		
 
-		@ManyToOne
-		@JoinColumn (name = "idRank")
-		private RankEntity Rank;
 		
 		
 		@OneToOne
@@ -76,11 +72,5 @@ public class TarefasConcluidasEntity {
 			this.uploadTarefas = uploadTarefas;
 		}
 
-		public RankEntity getRank() {
-			return Rank;
-		}
-
-		public void setRank(RankEntity rank) {
-			Rank = rank;
-		}
+		
 }

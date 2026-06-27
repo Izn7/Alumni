@@ -62,17 +62,21 @@
 
       <div class="form-hd">
         <h2>Acessar conta</h2>
-        <p>Insira suas credenciais</p>
+        <p>Selecione seu perfil e insira suas credenciais</p>
       </div>
 
-      
+      <div class="p-tabs">
+        <button class="ptab on" onclick="setProfile('estagiario',this)">🎓 Estagiário</button>
+        <button class="ptab" onclick="setProfile('gestor',this)">💼 Gestor</button>
+        <button class="ptab" onclick="setProfile('empresa',this)">🏢 Empresa</button>
+      </div>
 
       <form id="login-form" novalidate>
         <div class="fields">
 
           <div class="field" id="field-email">
-            <label class="lbl" for="email">E-mail ou CPF</label>
-            <input class="inp" type="text" id="email" placeholder="seu.email@alumni.com" autocomplete="email">
+            <label class="lbl" for="email">E-mail </label>
+            <input class="inp" type="text" id="email" placeholder="seu.email@empresa.com" autocomplete="email">
             <span class="field-error">Por favor, insira um e-mail válido</span>
           </div>
 
@@ -105,8 +109,9 @@
           <div class="divider"><span>ou</span></div>
 
           <p class="form-footer">
-            Não tem conta ainda?
-            <a href="cadastro.html">Criar conta grátis</a>
+            Não conhece nosso serviço ainda?
+            <a href="planos.html">Verificar nossos planos</a>
+          
           </p>
 
         </div>
@@ -115,6 +120,50 @@
     </div>
   </main>
 </div>
+
+<script>
+  
+  let perfilAtivo = 'estagiario';
+
+  function setProfile(perfil, botaoClicado) {
+   
+    perfilAtivo = perfil;
+
+    
+    const abas = document.querySelectorAll('.p-tabs .ptab');
+    abas.forEach(aba => aba.classList.remove('on'));
+
+ 
+    botaoClicado.classList.add('on');
+
+
+    const inputEmail = document.getElementById('email');
+    
+    if (perfil === 'estagiario') {
+      inputEmail.placeholder = 'seu.email@empresa.com '
+    } else if (perfil === 'gestor') {
+      inputEmail.placeholder = 'seu.nome@empresa.com.br'
+    } else if (perfil === 'empresa') {
+      inputEmail.placeholder = 'cnpj@empresa.com'
+    }
+  }
+
+
+  document.getElementById('login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const emailValue = document.getElementById('email').value;
+    const senhaValue = document.getElementById('senha').value;
+
+    console.log("Enviando dados de login:");
+    console.log("Perfil:", perfilAtivo);
+    console.log("Login:", emailValue);
+    
+    
+  });
+  
+</script>
+
 
 
 </body>
