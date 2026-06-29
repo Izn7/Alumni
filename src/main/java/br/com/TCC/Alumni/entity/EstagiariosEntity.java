@@ -59,7 +59,7 @@ public class EstagiariosEntity implements Serializable {
     @JoinColumn(name = "id_gestor")
     private GestorEntity gestor;
 
-    
+    private boolean isFirstLogin;
 
     public Integer getId() {
         return id;
@@ -188,5 +188,13 @@ public class EstagiariosEntity implements Serializable {
     public void setGestor(GestorEntity gestor) {
         this.gestor = gestor;
     }
+
+	public boolean isFirstLogin() {
+		return isFirstLogin;
+	}
+
+	public void setFirstLogin(boolean isFirstLogin) {
+		this.isFirstLogin = isFirstLogin;
+	}
 
 }

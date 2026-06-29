@@ -1,5 +1,8 @@
 // Chamando API
-const API_SALVAR = "http://localhost:8080/Gestores/gravar";
+const API_SALVAR_GESTOR = 'http://localhost:8080/Gestor/gravar';
+const API_ATUALIZAR_GESTOR = 'http://localhost:8080/Gestor/Atualizar';
+
+let editandoId = null;
 
 async function cadastrarGestor() {
 
@@ -9,31 +12,48 @@ async function cadastrarGestor() {
         sobrenome: document.getElementById("sobrenome").value,
         email: document.getElementById("email").value,
         cpf: document.getElementById("cpf").value,
-        dataNascimento: document.getElementById("dataNascimento").value,
+        telefone: document.getElementById("telefone").value,
         cargo: document.getElementById("cargo").value,
         senha: document.getElementById("senha").value,
+        departamento: document.getElementById("departamento").value,
         fotoPerfil: document.getElementById("fotoPerfil").value
-		
-
     };
 
-    const response = await fetch(API_SALVAR, {
+    let response;
 
-        method: "POST",
+    if (editandoId) {
 
-        headers: {
-            "Content-Type": "application/json"
-        },
+        response = await fetch(`${API_ATUALIZAR_GESTOR}/${editandoId}`, {
 
-        body: JSON.stringify(gestor)
+            method: "PUT",
 
-    });
+            headers: {
+                "Content-Type": "application/json"
+            },
 
-    if (response.ok) {
-        alert("Gestor cadastrado com sucesso!");
-        document.getElementById("formGestor").reset();
+            body: JSON.stringify(gestor)
+        });
+
     } else {
-        alert("Erro ao cadastrar gestor.");
+
+        response = await fetch(API_SALVAR_GESTOR, {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(gestor)
+        });
     }
 
+    if (response.ok) {
+        alert("Gestor salvo com sucesso!");
+        buscarGestores(); // função de listagem
+        document.getElementById("formGestor").reset();
+        editandoId = null;
+    } else {
+        alert("Erro ao salvar gestor.");
+    }
 }

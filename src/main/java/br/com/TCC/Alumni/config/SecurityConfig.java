@@ -12,6 +12,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
+	
+	
+	
+	
+	
 	}
 	
 	// Configura as regras de segurança para as rotas da aplicação
