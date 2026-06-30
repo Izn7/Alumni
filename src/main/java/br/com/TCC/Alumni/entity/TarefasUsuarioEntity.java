@@ -26,7 +26,7 @@ public class TarefasUsuarioEntity implements Serializable{
 	private String descricao;
 	private String status;
 	private boolean prioridade;
-
+	
 	
 
 	public int getId() {

@@ -1,230 +1,360 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Gestão de Estagiários | ALUMNI</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="css/gestao.css">
-<style>
-  
-</style>
+
+
+<script type="text/javascript" src="js/gestao.js">
+
+</script>
+
+
+
 </head>
+
 <body>
+
 <div class="amb"></div>
 
+
+
 <nav class="nav">
+
   <div class="nav-in">
+
     <div style="display:flex;align-items:center;gap:14px">
+
       <button style="background:none;border:none;cursor:pointer;padding:4px;display:flex;flex-direction:column;gap:5px" onclick="document.getElementById('sb').classList.toggle('open');document.getElementById('sov').classList.toggle('open')" aria-label="Menu">
+
         <span style="width:20px;height:2px;background:var(--o);border-radius:4px;display:block"></span>
+
         <span style="width:20px;height:2px;background:var(--o);border-radius:4px;display:block"></span>
+
         <span style="width:20px;height:2px;background:var(--o);border-radius:4px;display:block"></span>
+
       </button>
+
       <a href="indexGestor.html" class="nav-logo">
+
         <img src="img/GDE SENAI.png" alt="ALUMNI" class="logo-img" style="height:38px;width:auto;display:block"></a>
+
     </div>
+
     <nav class="nav-tabs">
+
       <a href="indexGestor.html" class="ntab">Visão Geral</a>
+
       <a href="gestao.html" class="ntab on">Estagiários</a>
+
       <a href="cadastrarTarefas.html" class="ntab">Tarefas</a>
+
     </nav>
+
     <a href="perfilGestor.html" class="nav-user">
+
       <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="">
+
       <div><div class="nu-name">Fernando Gomes</div><div class="nu-role">Gestor</div></div>
+
     </a>
+
   </div>
+
 </nav>
 
+
+
 <div class="sov" id="sov" onclick="this.classList.remove('open');document.getElementById('sb').classList.remove('open')"></div>
+
 <aside class="sidebar" id="sb">
+
   <nav class="snav">
+
     <a href="indexGestor.html"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Visão Geral</a>
+
     <a href="gestao.html" class="on"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Gestão de Estagiários</a>
+
     <a href="cadastrarTarefas.html"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>Cadastrar Tarefas</a>
+
     <div class="sdiv"></div>
+
     <a href="perfilGestor.html"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Meu Perfil</a>
+
     <a href="index.html" class="logout"><svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sair</a>
+
   </nav>
+
 </aside>
 
+
+
 <main class="main">
+
   <div class="container">
+
     
-    <!-- CABEÇALHO CONTENDO O BOTÃO DE CADASTRO -->
+
     <header class="hd-actions-row">
+
       <div>
+
         <h1 class="pg-title">Gestão de <span>Estagiários</span></h1>
+
         <p class="pg-sub">Painel de controle de contratos e entregas técnicas.</p>
+
       </div>
+
       
+
       <div class="right-controls">
+
         <div class="filters">
+
           <div class="search-box">
+
             <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+
             <input class="search-inp" type="text" placeholder="Buscar estagiário...">
+
           </div>
+
           <span class="filter-btn on">Todos</span>
+
           <span class="filter-btn">Ativos</span>
+
           <span class="filter-btn">Pendentes</span>
+
         </div>
 
-        <!-- BOTÃO COMPATÍVEL QUE DIRECIONA PARA O CADASTRO DE ESTAGIÁRIO -->
-        <a href="novoEstagiario.html?origem=gestor"  class="btn-add-talent">
+
+
+        <a href="novoEstagiario.html?origem=gestor" class="btn-add-talent">
+
           <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+
           Cadastrar Estagiário
+
         </a>
+
       </div>
+
     </header>
 
-    <div class="cards-grid">
 
-      <a href="detalhes.html" class="student-card">
-        <div class="card-top">
-          <div class="avatar-mini">👤</div>
-          <div>
-            <div class="tce">RE-992341</div>
-            <div class="card-name">Rafael Richard</div>
-            <span class="status-chip ativo">Ativo</span>
-          </div>
-        </div>
-        <div class="card-metrics">
-          <div class="metric-row">
-            <span class="metric-lbl">Atividades</span>
-            <div class="dots">
-              <div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div>
-            </div>
-          </div>
-          <div class="metric-row">
-            <span class="metric-lbl">Performance</span>
-            <span style="font-size:.78rem;font-weight:800;color:var(--success)">88%</span>
-          </div>
-        </div>
-        <div class="card-action"><span>Explorar Perfil</span><span>→</span></div>
-      </a>
 
-      <a href="detalhes.html" class="student-card">
-        <div class="card-top">
-          <div class="avatar-mini">👤</div>
-          <div>
-            <div class="tce">RE-884210</div>
-            <div class="card-name">Ian Pablo</div>
-            <span class="status-chip ativo">Ativo</span>
-          </div>
-        </div>
-        <div class="card-metrics">
-          <div class="metric-row">
-            <span class="metric-lbl">Atividades</span>
-            <div class="dots">
-              <div class="dot on"></div><div class="dot off"></div><div class="dot on"></div><div class="dot on"></div>
-            </div>
-          </div>
-          <div class="metric-row">
-            <span class="metric-lbl">Performance</span>
-            <span style="font-size:.78rem;font-weight:800;color:var(--warning)">72%</span>
-          </div>
-        </div>
-        <div class="card-action"><span>Explorar Perfil</span><span>→</span></div>
-      </a>
+    <div class="table-container">
 
-      <a href="detalhes.html" class="student-card">
-        <div class="card-top">
-          <div class="avatar-mini">👤</div>
-          <div>
-            <div class="tce">RE-773190</div>
-            <div class="card-name">João Pedro</div>
-            <span class="status-chip ativo">Ativo</span>
-          </div>
-        </div>
-        <div class="card-metrics">
-          <div class="metric-row">
-            <span class="metric-lbl">Atividades</span>
-            <div class="dots">
-              <div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div>
-            </div>
-          </div>
-          <div class="metric-row">
-            <span class="metric-lbl">Performance</span>
-            <span style="font-size:.78rem;font-weight:800;color:var(--success)">91%</span>
-          </div>
-        </div>
-        <div class="card-action"><span>Explorar Perfil</span><span>→</span></div>
-      </a>
+      <table class="students-table">
 
-      <a href="detalhes.html" class="student-card">
-        <div class="card-top">
-          <div class="avatar-mini">👤</div>
-          <div>
-            <div class="tce">RE-662080</div>
-            <div class="card-name">Bernardo Carvalho</div>
-            <span class="status-chip pendente">Pendente</span>
-          </div>
-        </div>
-        <div class="card-metrics">
-          <div class="metric-row">
-            <span class="metric-lbl">Atividades</span>
-            <div class="dots">
-              <div class="dot off"></div><div class="dot off"></div><div class="dot on"></div><div class="dot on"></div>
-            </div>
-          </div>
-          <div class="metric-row">
-            <span class="metric-lbl">Performance</span>
-            <span style="font-size:.78rem;font-weight:800;color:var(--warning)">55%</span>
-          </div>
-        </div>
-        <div class="card-action"><span>Explorar Perfil</span><span>→</span></div>
-      </a>
+        <thead>
 
-      <a href="detalhes.html" class="student-card">
-        <div class="card-top">
-          <div class="avatar-mini">👤</div>
-          <div>
-            <div class="tce">RE-551970</div>
-            <div class="card-name">Thiago Henrique</div>
-            <span class="status-chip ativo">Ativo</span>
-          </div>
-        </div>
-        <div class="card-metrics">
-          <div class="metric-row">
-            <span class="metric-lbl">Atividades</span>
-            <div class="dots">
-              <div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div>
-            </div>
-          </div>
-          <div class="metric-row">
-            <span class="metric-lbl">Performance</span>
-            <span style="font-size:.78rem;font-weight:800;color:var(--success)">79%</span>
-          </div>
-        </div>
-        <div class="card-action"><span>Explorar Perfil</span><span>→</span></div>
-      </a>
+          <tr>
 
-      <a href="detalhes.html" class="student-card">
-        <div class="card-top">
-          <div class="avatar-mini">👤</div>
-          <div>
-            <div class="tce">RE-440860</div>
-            <div class="card-name">Pedro Alves</div>
-            <span class="status-chip ativo">Ativo</span>
-          </div>
-        </div>
-        <div class="card-metrics">
-          <div class="metric-row">
-            <span class="metric-lbl">Atividades</span>
-            <div class="dots">
-              <div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div>
-            </div>
-          </div>
-          <div class="metric-row">
-            <span class="metric-lbl">Performance</span>
-            <span style="font-size:.78rem;font-weight:800;color:var(--success)">95%</span>
-          </div>
-        </div>
-        <div class="card-action"><span>Explorar Perfil</span><span>→</span></div>
-      </a>
+            <th>Estagiário</th>
+
+            <th>Unidade</th>
+
+            <th>Cargo</th>
+
+            <th>Gestor Responsável</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <td>
+
+              <div class="user-cell">
+
+                <div class="user-avatar">👤</div>
+
+                <div class="user-info">
+
+                  <span class="user-name">Rafael Richard</span>
+
+                  <span class="user-id">RE-992341</span>
+
+                </div>
+
+              </div>
+
+            </td>
+
+            <td><span class="info-tag">SENAI Contagem</span></td>
+
+            <td>Estagiário de TI</td>
+
+            <td>Fernando Gomes</td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+
+              <div class="user-cell">
+
+                <div class="user-avatar">👤</div>
+
+                <div class="user-info">
+
+                  <span class="user-name">Ian Pablo</span>
+
+                  <span class="user-id">RE-884210</span>
+
+                </div>
+
+              </div>
+
+            </td>
+
+            <td><span class="info-tag">SENAI BH</span></td>
+
+            <td>Estagiário de Redes</td>
+
+            <td>Fernando Gomes</td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+
+              <div class="user-cell">
+
+                <div class="user-avatar">👤</div>
+
+                <div class="user-info">
+
+                  <span class="user-name">João Pedro</span>
+
+                  <span class="user-id">RE-773190</span>
+
+                </div>
+
+              </div>
+
+            </td>
+
+            <td><span class="info-tag">SENAI Contagem</span></td>
+
+            <td>Estagiário de Dev</td>
+
+            <td>Fernando Gomes</td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+
+              <div class="user-cell">
+
+                <div class="user-avatar">👤</div>
+
+                <div class="user-info">
+
+                  <span class="user-name">Bernardo Carvalho</span>
+
+                  <span class="user-id">RE-662080</span>
+
+                </div>
+
+              </div>
+
+            </td>
+
+            <td><span class="info-tag">SENAI Betim</span></td>
+
+            <td>Estagiário de Suporte</td>
+
+            <td>Fernando Gomes</td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+
+              <div class="user-cell">
+
+                <div class="user-avatar">👤</div>
+
+                <div class="user-info">
+
+                  <span class="user-name">Thiago Henrique</span>
+
+                  <span class="user-id">RE-551970</span>
+
+                </div>
+
+              </div>
+
+            </td>
+
+            <td><span class="info-tag">SENAI Contagem</span></td>
+
+            <td>Estagiário de Dados</td>
+
+            <td>Fernando Gomes</td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+
+              <div class="user-cell">
+
+                <div class="user-avatar">👤</div>
+
+                <div class="user-info">
+
+                  <span class="user-name">Pedro Alves</span>
+
+                  <span class="user-id">RE-440860</span>
+
+                </div>
+
+              </div>
+
+            </td>
+
+            <td><span class="info-tag">SENAI BH</span></td>
+
+            <td>Estagiário de Dev</td>
+
+            <td>Fernando Gomes</td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
 
     </div>
+
+
+
   </div>
+
 </main>
+
 </body>
+
 </html>

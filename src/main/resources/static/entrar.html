@@ -121,50 +121,9 @@
   </main>
 </div>
 
-<script>
-  
-  let perfilAtivo = 'estagiario';
-
-  function setProfile(perfil, botaoClicado) {
-   
-    perfilAtivo = perfil;
-
-    
-    const abas = document.querySelectorAll('.p-tabs .ptab');
-    abas.forEach(aba => aba.classList.remove('on'));
-
- 
-    botaoClicado.classList.add('on');
 
 
-    const inputEmail = document.getElementById('email');
-    
-    if (perfil === 'estagiario') {
-      inputEmail.placeholder = 'seu.email@empresa.com '
-    } else if (perfil === 'gestor') {
-      inputEmail.placeholder = 'seu.nome@empresa.com.br'
-    } else if (perfil === 'empresa') {
-      inputEmail.placeholder = 'cnpj@empresa.com'
-    }
-  }
-
-
-  document.getElementById('login-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const emailValue = document.getElementById('email').value;
-    const senhaValue = document.getElementById('senha').value;
-
-    console.log("Enviando dados de login:");
-    console.log("Perfil:", perfilAtivo);
-    console.log("Login:", emailValue);
-    
-    
-  });
-  
-</script>
-
-
+<script src="js/entrar.js"></script>
 
 </body>
 </html>

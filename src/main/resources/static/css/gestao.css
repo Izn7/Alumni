@@ -1,3 +1,186 @@
+/* Tabela com estética escura (Dark Mode) */
+
+  .table-container {
+
+    width: 100%;
+
+    margin-top: 32px;
+
+    background: #121212; /* Fundo preto/escuro */
+
+    border-radius: 16px;
+
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+
+    border: 1px solid #2a2a2a;
+
+    overflow-x: auto;
+
+  }
+
+  
+
+  .students-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 800px;
+
+  }
+
+  
+
+  .students-table th {
+
+    background-color: #1a1a1a;
+
+    padding: 20px 24px;
+
+    text-align: left;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    color: #888888;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
+
+    border-bottom: 2px solid #2a2a2a;
+
+  }
+
+  
+
+  .students-table td {
+
+    padding: 16px 24px;
+
+    vertical-align: middle;
+
+    border-bottom: 1px solid #1f1f1f;
+
+    color: #e0e0e0; /* Texto claro */
+
+    font-weight: 500;
+
+    font-size: 0.95rem;
+
+    transition: background-color 0.2s;
+
+  }
+
+  
+
+  .students-table tbody tr:hover td {
+
+    background-color: #1a1a1a; /* Efeito hover mais escuro */
+
+  }
+
+
+
+  .students-table tbody tr:last-child td {
+
+    border-bottom: none;
+
+  }
+
+  
+
+  /* Célula de Usuário (Avatar + Nome + Matrícula) */
+
+  .user-cell {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+  }
+
+  
+
+  .user-avatar {
+
+    width: 40px;
+
+    height: 40px;
+
+    background: #2a2a2a; /* Fundo escuro para o avatar */
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 1.2rem;
+
+  }
+
+  
+
+  .user-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+  }
+
+  
+
+  .user-name {
+
+    font-weight: 700;
+
+    color: #ffffff; /* Nome em branco para destaque */
+
+  }
+
+  
+
+  .user-id {
+
+    font-size: 0.75rem;
+
+    font-weight: 600;
+
+    color: #888888;
+
+  }
+
+
+
+  /* Tags de Cargo e Unidade */
+
+  .info-tag {
+
+    background: #2a2a2a; /* Fundo da tag escuro */
+
+    padding: 6px 12px;
+
+    border-radius: 6px;
+
+    font-size: 0.85rem;
+
+    color: #cccccc;
+
+    display: inline-block;
+
+  }
+
+
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
 body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#030303;color:#fff;min-height:100vh}
 a{text-decoration:none;color:inherit}

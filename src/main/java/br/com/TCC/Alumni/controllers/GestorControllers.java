@@ -47,6 +47,7 @@ public class GestorControllers {
 					@PostMapping("/Gravar")
 					@ResponseStatus(HttpStatus.CREATED)
 					public GestorEntity gravarGestores(@RequestBody GestorEntity gestor) {
+						gestor.setSenha(encoder.encode(gestor.getSenha()));
 						return gestorrepository.save(gestor);
 						
 					}
