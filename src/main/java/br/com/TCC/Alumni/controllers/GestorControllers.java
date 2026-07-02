@@ -29,6 +29,7 @@ public class GestorControllers {
 
 					@Autowired
 					private GestorRepository gestorrepository;
+					
 					@Autowired
 					private BCryptPasswordEncoder encoder;
 					
@@ -47,6 +48,7 @@ public class GestorControllers {
 					@PostMapping("/Gravar")
 					@ResponseStatus(HttpStatus.CREATED)
 					public GestorEntity gravarGestores(@RequestBody GestorEntity gestor) {
+						gestor.setFirstLogin(true);
 						gestor.setSenha(encoder.encode(gestor.getSenha()));
 						return gestorrepository.save(gestor);
 						
@@ -54,9 +56,11 @@ public class GestorControllers {
 					
 					@PutMapping("/Atualizar/{id}")
 					@ResponseStatus(HttpStatus.OK)
-					public GestorEntity atualizarGestores(@RequestBody GestorEntity gestor) {
-						gestor.setSenha(encoder.encode(gestor.getSenha()));
-						return gestorrepository.save(gestor);
+					public GestorEntity atualizarGestores(@PathVariable Integer id, @RequestBody GestorEntity gestor) {
+						 GestorEntity gestor1 = gestorrepository.findById(id).orElseThrow(() -> new RuntimeException("Gestor não encontrado"));
+						gestor1.setFirstLogin(false);
+						gestor1.setSenha(encoder.encode(gestor.getSenha()));
+						return gestorrepository.save(gestor1);
 						
 					}
 					@DeleteMapping("/Deletar/{id}")

@@ -29,7 +29,18 @@ public class EmpresaEntity implements Serializable{
 	
 	private String email;
 	
+	private boolean isFirstLogin;
 	
+	
+	
+
+	public boolean isFirstLogin() {
+		return isFirstLogin;
+	}
+
+	public void setFirstLogin(boolean isFirstLogin) {
+		this.isFirstLogin = isFirstLogin;
+	}
 
 	public String getEmail() {
 		return email;

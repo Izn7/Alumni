@@ -11,13 +11,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.TCC.Alumni.entity.EmpresaEntity;
-
 import br.com.TCC.Alumni.repository.EmpresaRepository;
 
 @RestController
@@ -26,11 +26,15 @@ public class EmpresaControllers {
 
 	@Autowired
 	private EmpresaRepository empresaRepository;
+
+	@Autowired
 	private BCryptPasswordEncoder encoder;
 	
 	@PostMapping("/Gravar")
 	@ResponseStatus(HttpStatus.CREATED)
 	public EmpresaEntity gravarEmpresa(@RequestBody EmpresaEntity empresaEntity) {
+	empresaEntity.setFirstLogin(true);
+	empresaEntity.setSenha(encoder.encode(empresaEntity.getSenha()));
 	return empresaRepository.save(empresaEntity);
 	}
 	
@@ -53,6 +57,15 @@ public class EmpresaControllers {
 		return empresaRepository.findByNomeEmpresa(nomeEmpresa);
 	}
 
+	@PutMapping("/Atualizar/{id}")
+	@ResponseStatus(HttpStatus.OK)
+	public EmpresaEntity atualizarEmpresa(@PathVariable Integer id, @RequestBody EmpresaEntity empresaEntity) {
+		EmpresaEntity empresa1 = empresaRepository.findById(id).orElseThrow(() -> new RuntimeException("Empresa não encontrada"));
+		empresa1.setFirstLogin(false);
+		empresa1.setSenha(encoder.encode(empresaEntity.getSenha()));
+		return empresaRepository.save(empresa1);
+	}
+	
 	@PostMapping("/login")
 	public ResponseEntity<EmpresaEntity> login(
 	        @RequestBody EmpresaEntity empresaLogin) {

@@ -28,15 +28,17 @@
         <section class="form-side">
             <div class="form-container">
                 <header class="form-header">
-                    <a href="javascript:history.back()" class="back-link">← Voltar ao painel</a>
+                    <a  href="#" onclick="window.history.back(); return false;" class="back-link">← Voltar ao painel</a>
                     <h2>Alterar sua Senha</h2>
                     <p>Preencha os campos abaixo para atualizar suas credenciais.</p>
                 </header>
+                
+              
 
-                <form class="password-form">
+                <form class="password-form" id="formAlterarSenha">
                     <div class="input-block">
                         <label>Senha Atual</label>
-                        <input type="password" placeholder="••••••••" required>
+                        <input type="password" id="senhaAtual" placeholder="••••••••" required>
                     </div>
 
                     <div class="separator"></div>
@@ -44,11 +46,11 @@
                     <div class="input-row">
                         <div class="input-block">
                             <label>Nova Senha</label>
-                            <input type="password" placeholder="••••••••" required>
+                            <input type="password" id="senha" placeholder="••••••••" required>
                         </div>
                         <div class="input-block">
                             <label>Confirmar Nova Senha</label>
-                            <input type="password" placeholder="••••••••" required>
+                            <input type="password" id="confirmarSenha" placeholder="••••••••" required>
                         </div>
                     </div>
 
@@ -62,13 +64,17 @@
                     </div>
 
                     <div class="action-buttons">
-                        <button type="submit" class="btn-main">SALVAR NOVA SENHA</button>
+                        <button type="submit" class="btn-main">
+   						 SALVAR NOVA SENHA
+						</button>
                         <button type="button" class="btn-ghost" onclick="window.history.back()">Descartar alterações</button>
                     </div>
                 </form>
             </div>
         </section>
     </div>
+
+<script src="js/alterarSenha.js"></script>
 
 </body>
 </html>

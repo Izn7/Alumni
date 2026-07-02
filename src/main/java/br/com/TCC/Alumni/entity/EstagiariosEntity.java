@@ -24,7 +24,7 @@ public class EstagiariosEntity implements Serializable {
     @Column(nullable = false, unique = true, length = 120)
     private String email;
 
-    @Column(nullable = false, unique = true, length = 14)
+    @Column(nullable = false, unique = true, length = 11)
     private String cpf;
 
     private Date dataNascimento;
@@ -51,8 +51,7 @@ public class EstagiariosEntity implements Serializable {
     @Column(nullable = false)
     private String senha;
 
-    @Column(length = 255)
-    private String fotoPerfil;
+    
 
    
     @ManyToOne
@@ -65,7 +64,11 @@ public class EstagiariosEntity implements Serializable {
         return id;
     }
 
-    public void setId(Integer id) {
+    public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public void setId(Integer id) {
         this.id = id;
     }
 
@@ -173,13 +176,6 @@ public class EstagiariosEntity implements Serializable {
         this.senha = senha;
     }
 
-    public String getFotoPerfil() {
-        return fotoPerfil;
-    }
-
-    public void setFotoPerfil(String fotoPerfil) {
-        this.fotoPerfil = fotoPerfil;
-    }
 
     public GestorEntity getGestor() {
         return gestor;

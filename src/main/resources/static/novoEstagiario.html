@@ -125,35 +125,7 @@
 
     <form class="fields" onsubmit="return false">
 
-      <!-- FOTO -->
-
-      <div class="form-section">
-
-        <div class="section-label">
-          Foto de Perfil
-        </div>
-
-        <div class="avatar-upload">
-
-          <div class="av-preview">
-            👤
-          </div>
-
-          <div class="av-info">
-            <p>Foto do Estagiário</p>
-            <span>JPG, PNG ou WEBP · Máx. 5MB</span>
-          </div>
-
-          <button
-            id="fotoPerfil"
-            type="button"
-            class="btn-upload">
-            Escolher Foto
-          </button>
-
-        </div>
-
-      </div>
+      
 
       <!-- DADOS PESSOAIS -->
 
@@ -223,6 +195,7 @@
 
             <input
               id="cpf"
+              onkeyup="document.getElementById('validation').innerHTML = validaCPF(this.value)"
               class="inp"
               type="text"
               placeholder="000.000.000-00"

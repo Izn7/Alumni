@@ -29,6 +29,8 @@ public class EstagiariosControllers {
 
 					@Autowired
 					private EstagiariosRepository estagiariosRepository;
+					
+					@Autowired
 					private BCryptPasswordEncoder encoder;
 					
 					
@@ -46,16 +48,20 @@ public class EstagiariosControllers {
 					}
 					@PostMapping("/Gravar")
 					@ResponseStatus(HttpStatus.CREATED)
-					public EstagiariosEntity gravarEstagiarios(@RequestBody EstagiariosEntity estagiarios) {
+					public EstagiariosEntity gravarEstagiarios(@RequestBody EstagiariosEntity estagiarios, Integer id) {
+						estagiarios.setFirstLogin(true);
+						estagiarios.setSenha(encoder.encode(estagiarios.getSenha()));
 						return estagiariosRepository.save(estagiarios);
 						
 					}
 					
 					@PutMapping("/Atualizar/{id}")
 					@ResponseStatus(HttpStatus.OK)
-					public EstagiariosEntity atualizarEstagiarios(@RequestBody EstagiariosEntity estagiarios) {
-						estagiarios.setSenha(encoder.encode(estagiarios.getSenha()));
-						return estagiariosRepository.save(estagiarios);
+					public EstagiariosEntity atualizarEstagiarios(@PathVariable Integer id, @RequestBody EstagiariosEntity estagiarios) {
+						EstagiariosEntity estagiarios1 = estagiariosRepository.findById(id).orElseThrow(() -> new RuntimeException("Estagiário não encontrado"));
+						estagiarios1.setFirstLogin(false);
+						estagiarios1.setSenha(encoder.encode(estagiarios.getSenha()));
+						return estagiariosRepository.save(estagiarios1);
 						
 					}
 					@DeleteMapping("/Deletar/{id}")
@@ -72,11 +78,11 @@ public class EstagiariosControllers {
 					
 					@PostMapping("/login")
 					public ResponseEntity<EstagiariosEntity> login(
-					        @RequestBody EstagiariosEntity gestorlogin) {
+					        @RequestBody EstagiariosEntity estagiariologin) {
 
 					    // busca usuário por email
 					    Optional<EstagiariosEntity> estagiarios =
-					    		estagiariosRepository.findByEmail(gestorlogin.getEmail());
+					    		estagiariosRepository.findByEmail(estagiariologin.getEmail());
 
 					    // se encontrou usuário, verifica senha
 					    if (estagiarios.isPresent()) {
@@ -85,7 +91,7 @@ public class EstagiariosControllers {
 
 					        // compara senha enviada com senha armazenada (hash)
 					        if (encoder.matches(
-					        		gestorlogin.getSenha(),
+					        		estagiariologin.getSenha(),
 					        		estagiariosEncontrado.getSenha())) {
 
 					            return ResponseEntity.ok(estagiariosEncontrado);

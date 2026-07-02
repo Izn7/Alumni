@@ -38,14 +38,22 @@ public class GestorEntity implements Serializable {
     @Column(nullable = false)
     private String departamento;
     
-    @Column(length = 255)
-    private String fotoPerfil;
-
-   
+    
+    private boolean isFirstLogin;
+    
+    
 
     
 
-    public Integer getId() {
+    public boolean isFirstLogin() {
+		return isFirstLogin;
+	}
+
+	public void setFirstLogin(boolean isFirstLogin) {
+		this.isFirstLogin = isFirstLogin;
+	}
+
+	public Integer getId() {
         return id;
     }
 
@@ -109,13 +117,6 @@ public class GestorEntity implements Serializable {
         this.senha = senha;
     }
 
-    public String getFotoPerfil() {
-        return fotoPerfil;
-    }
-
-    public void setFotoPerfil(String fotoPerfil) {
-        this.fotoPerfil = fotoPerfil;
-    }
 
 	public String getDepartamento() {
 		return departamento;
