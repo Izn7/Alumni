@@ -60,7 +60,9 @@ public class EstagiariosControllers {
 					public EstagiariosEntity atualizarEstagiarios(@PathVariable Integer id, @RequestBody EstagiariosEntity estagiarios) {
 						EstagiariosEntity estagiarios1 = estagiariosRepository.findById(id).orElseThrow(() -> new RuntimeException("Estagiário não encontrado"));
 						estagiarios1.setFirstLogin(false);
-						estagiarios1.setSenha(encoder.encode(estagiarios.getSenha()));
+						if (estagiarios.getSenha() != null && !estagiarios.getSenha().isBlank()) {
+						    estagiarios1.setSenha(encoder.encode(estagiarios.getSenha()));
+						}
 						return estagiariosRepository.save(estagiarios1);
 						
 					}

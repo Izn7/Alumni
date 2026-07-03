@@ -1,323 +1,295 @@
-<!DOCTYPE html>
+!DOCTYPE html>
+
 <html lang="pt-br">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript" src="js/cadastrarTarefas.js">
+
+</script>
 
 <title>Nova Tarefa | ALUMNI Corporate</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link
+	href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+	rel="stylesheet">
+
 <link rel="stylesheet" href="css/novoEstagiario.css">
+
 
 </head>
 
+
 <body>
 
-<div class="amb"></div>
 
-<div class="layout">
+	<div class="amb"></div>
 
-    <!-- LADO ESQUERDO -->
-    <aside class="visual">
+	<div class="layout">
 
-        <div class="v-logo">
-            <img src="img/GDE SENAI.png" alt="ALUMNI"
-                class="logo-img"
-                style="height:38px;width:auto;display:block">
-        </div>
 
-        <div class="v-mid">
 
-            <div class="v-badge">
-                Cadastro de Tarefa
-            </div>
+		<aside class="visual">
 
-            <h1>
-                Crie uma<br>
-                nova <span class="h1-grad">atividade</span><br>
-                para um estagiário.
-            </h1>
+			<div class="v-logo">
 
-            <p>
-                Cadastre tarefas para acompanhar o desenvolvimento
-                dos estagiários durante o período de estágio.
-            </p>
+				<img src="img/GDE SENAI.png" alt="ALUMNI" class="logo-img"
+					style="height: 38px; width: auto; display: block">
 
-            <div class="v-flow">
+			</div>
 
-                <div class="v-step">
-                    <div class="vs-num">1</div>
 
-                    <div class="vs-info">
-                        <div class="vs-title">
-                            Informações da tarefa
-                        </div>
+			<div class="v-mid">
 
-                        <div class="vs-desc">
-                            Nome, categoria e prioridade.
-                        </div>
-                    </div>
-                </div>
 
-                <div class="v-step">
-                    <div class="vs-num">2</div>
+				<div class="v-badge">Cadastro de Tarefa</div>
 
-                    <div class="vs-info">
-                        <div class="vs-title">
-                            Planejamento
-                        </div>
 
-                        <div class="vs-desc">
-                            Defina datas e responsável.
-                        </div>
-                    </div>
-                </div>
+				<h1>
 
-                <div class="v-step">
-                    <div class="vs-num">3</div>
+					Crie uma<br> nova <span class="h1-grad">atividade</span><br>
+					para um estagiário.
 
-                    <div class="vs-info">
-                        <div class="vs-title">
-                            Acompanhamento
-                        </div>
+				</h1>
 
-                        <div class="vs-desc">
-                            Atualize o status conforme o progresso.
-                        </div>
-                    </div>
-                </div>
 
-            </div>
+				<p>Cadastre tarefas para acompanhar o desenvolvimento dos
+					estagiários durante o período de estágio.</p>
 
-        </div>
 
-        <p class="v-foot">
-            © 2026 ALUMNI · SENAI CEDETEM
-        </p>
+				<div class="v-flow">
 
-    </aside>
+					<div class="v-step">
 
-    <!-- FORMULÁRIO -->
+						<div class="vs-num">1</div>
 
-    <main class="form-side">
 
-        <a href="#" onclick="window.history.back(); return false;" class="form-back">
-            <svg viewBox="0 0 24 24">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            Voltar para Lista
-        </a>
+						<div class="vs-info">
 
-        <div class="form-hd">
+							<div class="vs-title">Informações da tarefa</div>
 
-            <h2>Nova Tarefa</h2>
+							<div class="vs-desc">Nome, categoria e prioridade.</div>
 
-            <p>
-                Cadastre uma nova atividade para acompanhamento do estagiário.
-            </p>
+						</div>
 
-        </div>
+					</div>
 
-        <form class="fields">
+					<div class="v-step">
 
-            <!-- DADOS DA TAREFA -->
+						<div class="vs-num">2</div>
 
-            <div class="form-section">
+						<div class="vs-info">
 
-                <div class="section-label">
-                    Informações da Tarefa
-                </div>
+							<div class="vs-title">Planejamento</div>
 
-                <div class="field">
-                    <label class="lbl">
-                        Nome da Tarefa
-                    </label>
+							<div class="vs-desc">Defina datas e responsável.</div>
 
-                    <input
-                        class="inp"
-                        type="text"
-                        placeholder="Ex.: Desenvolver tela de Login">
-                </div>
+						</div>
 
-                <div class="grid2">
+					</div>
 
-                    <div class="field">
+					<div class="v-step">
 
-                        <label class="lbl">
-                            Estagiário
-                        </label>
+						<div class="vs-num">3</div>
 
-                        <select class="inp">
-                            <option selected disabled>
-                                Selecione o estagiário
-                            </option>
+						<div class="vs-info">
 
-                            <option>Rafael Richard</option>
-                            <option>João Pedro</option>
-                            <option>Felipe Souza</option>
-                        </select>
+							<div class="vs-title">Acompanhamento</div>
 
-                    </div>
+							<div class="vs-desc">Atualize o status conforme o
+								progresso.</div>
 
-                    <div class="field">
+						</div>
 
-                        <label class="lbl">
-                            Categoria
-                        </label>
+					</div>
 
-                        <select class="inp">
+				</div>
 
-                            <option selected disabled>
-                                Selecione
-                            </option>
+			</div>
 
-                            <option>Desenvolvimento</option>
-                            <option>Documentação</option>
-                            <option>Infraestrutura</option>
-                            <option>Suporte</option>
-                            <option>Treinamento</option>
+			<p class="v-foot">© 2026 ALUMNI · SENAI CEDETEM</p>
 
-                        </select>
+		</aside>
 
-                    </div>
 
-                </div>
+		<main class="form-side">
 
-                <div class="grid2">
 
-                    <div class="field">
 
-                        <label class="lbl">
-                            Prioridade
-                        </label>
+			<a href="#" onclick="window.history.back(); return false;"
+				class="form-back"> <svg viewBox="0 0 24 24">
 
-                        <select class="inp">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
 
-                            <option>Baixa</option>
-                            <option selected>Média</option>
-                            <option>Alta</option>
+            </svg> Voltar para Lista
 
-                        </select>
+			</a>
 
-                    </div>
 
-                    <div class="field">
+			<div class="form-hd">
 
-                        <label class="lbl">
-                            Status
-                        </label>
+				<h2>Nova Tarefa</h2>
 
-                        <select class="inp">
+				<p>Cadastre uma nova atividade para acompanhamento do
+					estagiário.</p>
 
-                            <option selected>Pendente</option>
-                            <option>Em andamento</option>
-                            <option>Concluída</option>
+			</div>
 
-                        </select>
+			<form class="fields">
 
-                    </div>
 
-                </div>
+				<div class="form-section">
 
-            </div>
+					<div class="section-label">Informações da Tarefa</div>
 
-            <!-- PLANEJAMENTO -->
+					<div class="field">
 
-            <div class="form-section">
+						<label class="lbl"> Nome da Tarefa </label> <input id="nomeTarefa"
+							class="inp" type="text"
+							placeholder="Ex.: Desenvolver tela de Login">
 
-                <div class="section-label">
-                    Planejamento
-                </div>
+					</div>
 
-                <div class="grid2">
 
-                    <div class="field">
+					<div class="grid2">
 
-                        <label class="lbl">
-                            Data de Início
-                        </label>
+						<div class="field">
 
-                        <input class="inp" type="date">
+							<label class="lbl"> Categoria </label> <select id="categoria"
+								class="inp">
 
-                    </div>
 
-                    <div class="field">
+								<option selected disabled>Selecione</option>
+								<option>Desenvolvimento</option>
+								<option>Documentação</option>
+								<option>Infraestrutura</option>
+								<option>Suporte</option>
+								<option>Treinamento</option>
 
-                        <label class="lbl">
-                            Data de Entrega
-                        </label>
 
-                        <input class="inp" type="date">
+							</select>
 
-                    </div>
+						</div>
 
-                </div>
+					</div>
 
-                <div class="field">
+					<div class="grid2">
 
-                    <label class="lbl">
-                        Carga Horária Estimada
-                    </label>
 
-                    <input
-                        class="inp"
-                        type="number"
-                        placeholder="Ex.: 20">
 
-                </div>
+						<div class="field">
 
-            </div>
 
-            <!-- DESCRIÇÃO -->
 
-            <div class="form-section">
+							<label class="lbl"> Prioridade </label> <select id="prioridade"
+								class="inp">
 
-                <div class="section-label">
-                    Descrição da Atividade
-                </div>
 
-                <div class="field">
+								<option>Baixa</option>
+								<option selected>Média</option>
+								<option>Alta</option>
 
-                    <label class="lbl">
-                        Objetivo
-                    </label>
+							</select>
 
-                    <textarea
-                        class="inp"
-                        rows="6"
-                        placeholder="Descreva detalhadamente a atividade que deverá ser realizada pelo estagiário."></textarea>
+						</div>
 
-                </div>
+						<div class="field">
 
-            </div>
+							<label class="lbl"> Status </label> <select id="status"
+								class="inp">
 
-            <!-- BOTÕES -->
+								<option selected>Pendente</option>
 
-            <div class="form-footer-btns">
+								<option>Em andamento</option>
 
-                <button
-                    class="btn-submit"
-                    type="submit">
+								<option>Concluída</option>
 
-                    CADASTRAR TAREFA
+							</select>
 
-                </button>
+						</div>
 
-                <a
-                    href="detalhesEstagiario.html"
-                    class="btn-cancel">
+						<select id="estagiario" class="inp" hidden="">
 
-                    Cancelar
+							<option selected>João</option>
 
-                </a>
+						</select>
 
-            </div>
+					</div>
+				</div>
 
-        </form>
 
-    </main>
+				<div class="form-section">
 
-</div>
+					<div class="section-label">Planejamento</div>
+
+					<div class="grid2">
+
+						<div class="field">
+
+							<label class="lbl"> Data de Início </label> <input
+								id="dataInicio" class="inp" type="date">
+
+						</div>
+
+						<div class="field">
+
+							<label class="lbl"> Data de Entrega </label> <input
+								id="dataEntrega" class="inp" type="date">
+						</div>
+
+					</div>
+
+
+					<div class="field">
+
+						<label class="lbl"> Carga Horária Estimada </label> <input
+							id="cargaHoraria" class="inp" type="number" placeholder="Ex.: 20">
+
+					</div>
+
+				</div>
+
+				<div class="form-section">
+
+					<div class="section-label">Descrição da Atividade</div>
+
+					<div class="field">
+
+						<label class="lbl"> Objetivo </label>
+
+						<textarea id="objetivo" class="inp" rows="6"
+							placeholder="Descreva detalhadamente a atividade que deverá ser realizada pelo estagiário."></textarea>
+
+					</div>
+
+				</div>
+
+
+				<div class="form-footer-btns">
+
+					<button class="btn-submit" type="submit"
+						onclick="cadastrarTarefa()">
+
+						CADASTRAR TAREFA</button>
+
+					<a href="detalhesEstagiario.html" class="btn-cancel"> Cancelar
+
+
+					</a>
+
+				</div>
+
+			</form>
+
+		</main>
+
+	</div>
 
 </body>
+
 </html>

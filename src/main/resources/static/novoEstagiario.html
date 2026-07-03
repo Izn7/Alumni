@@ -195,11 +195,11 @@
 
             <input
               id="cpf"
-              onkeyup="document.getElementById('validation').innerHTML = validaCPF(this.value)"
+              onkeyup="validaCPF(this.value);"
               class="inp"
               type="text"
               placeholder="000.000.000-00"
-              maxlength="14">
+              >
 
           </div>
 
@@ -300,49 +300,7 @@
       </div>
       
       
-            <div class="form-section">
-        <div class="section-label">Dados Acadêmicos</div>
-
-        <div class="field">
-          <label class="lbl">Instituição de Ensino</label>
-          <input
-            id="instituicao"
-            class="inp"
-            type="text"
-            placeholder="SENAI CEDETEM">
-        </div>
-
-        <div class="grid2">
-
-          <div class="field">
-            <label class="lbl">Curso</label>
-            <select id="curso" class="inp">
-              <option value="" disabled selected>Selecione o curso</option>
-              <option>Análise e Desenvolvimento de Sistemas</option>
-              <option>Redes de Computadores</option>
-              <option>Automação Industrial</option>
-              <option>Mecânica Industrial</option>
-              <option>Eletrotécnica</option>
-              <option>Administração</option>
-              <option>Outro</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label class="lbl">Semestre / Período</label>
-            <select id="semestre" class="inp">
-              <option value="" disabled selected>Selecione</option>
-              <option>1º Semestre</option>
-              <option>2º Semestre</option>
-              <option>3º Semestre</option>
-              <option>4º Semestre</option>
-              <option>5º Semestre</option>
-              <option>6º Semestre</option>
-            </select>
-          </div>
-
-        </div>
-      </div>
+            
 
       <div class="form-section">
 
@@ -408,7 +366,7 @@
 
       <div class="form-section">
 
-        <div class="section-label">Segurança de Acesso</div>
+        <div class="section-label" id="secaoSenha">Segurança de Acesso</div>
 
         <div class="grid2">
 
@@ -465,6 +423,6 @@
   </main>
 
 </div>
-
+<script type="module" src="js/novoEstagiario.js"></script>
 </body>
 </html>

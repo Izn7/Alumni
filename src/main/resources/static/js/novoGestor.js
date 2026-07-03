@@ -1,13 +1,13 @@
 // Chamando API
-const API_SALVAR_GESTOR = 'http://localhost:8080/Gestor/gravar';
-const API_ATUALIZAR_GESTOR = 'http://localhost:8080/Gestor/Atualizar';
+
+const API_SALVAR_GESTOR = "http://localhost:8000/Gestores/Gravar";
+const API_ATUALIZAR_GESTOR = "http://localhost:8000/Gestores/Atualizar";
 
 let editandoId = null;
 
 async function cadastrarGestor() {
 
     const gestor = {
-
         nome: document.getElementById("nome").value,
         sobrenome: document.getElementById("sobrenome").value,
         email: document.getElementById("email").value,
@@ -15,97 +15,94 @@ async function cadastrarGestor() {
         telefone: document.getElementById("telefone").value,
         cargo: document.getElementById("cargo").value,
         senha: document.getElementById("senha").value,
-        departamento: document.getElementById("departamento").value,
-        fotoPerfil: document.getElementById("fotoPerfil").value
+        departamento: document.getElementById("departamento").value
     };
+
+    const cpfLimpo = gestor.cpf.replace(/\D/g, "");
+
+    if (!validarCPF(cpfLimpo)) {
+        alert("CPF inválido.");
+        document.getElementById("cpf").focus();
+        return;
+    }
 
     let response;
 
     if (editandoId) {
 
         response = await fetch(`${API_ATUALIZAR_GESTOR}/${editandoId}`, {
-
             method: "PUT",
-
             headers: {
                 "Content-Type": "application/json"
             },
-
             body: JSON.stringify(gestor)
         });
 
     } else {
 
         response = await fetch(API_SALVAR_GESTOR, {
-
             method: "POST",
-
             headers: {
                 "Content-Type": "application/json"
             },
-
             body: JSON.stringify(gestor)
         });
+
     }
 
     if (response.ok) {
+
         alert("Gestor salvo com sucesso!");
-        buscarGestores(); // função de listagem
-        document.getElementById("formGestor").reset();
+
+        document.getElementById("nome").value = "";
+        document.getElementById("sobrenome").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("cpf").value = "";
+        document.getElementById("telefone").value = "";
+        document.getElementById("cargo").value = "";
+        document.getElementById("senha").value = "";
+        document.getElementById("departamento").value = "";
+
         editandoId = null;
+
     } else {
+
         alert("Erro ao salvar gestor.");
+
     }
 }
 
+function validarCPF(cpf) {
 
+    cpf = cpf.replace(/\D/g, "");
 
-function validaCPF(cpf) {
-  var Soma = 0
-  var Resto
+    if (cpf.length !== 11) return false;
 
-  var strCPF = String(cpf).replace(/[^\d]/g, '')
-  
-  if (strCPF.length !== 11)
-     return false
-  
-  if ([
-    '00000000000',
-    '11111111111',
-    '22222222222',
-    '33333333333',
-    '44444444444',
-    '55555555555',
-    '66666666666',
-    '77777777777',
-    '88888888888',
-    '99999999999',
-    ].indexOf(strCPF) !== -1)
-    return false
+    if (/^(\d)\1+$/.test(cpf)) return false;
 
-  for (i=1; i<=9; i++)
-    Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
+    let soma = 0;
 
-  Resto = (Soma * 10) % 11
+    for (let i = 0; i < 9; i++) {
+        soma += parseInt(cpf.charAt(i)) * (10 - i);
+    }
 
-  if ((Resto == 10) || (Resto == 11)) 
-    Resto = 0
+    let resto = (soma * 10) % 11;
 
-  if (Resto != parseInt(strCPF.substring(9, 10)) )
-    return false
+    if (resto === 10) resto = 0;
 
-  Soma = 0
+    if (resto !== parseInt(cpf.charAt(9))) {
+        return false;
+    }
 
-  for (i = 1; i <= 10; i++)
-    Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i)
+    soma = 0;
 
-  Resto = (Soma * 10) % 11
+    for (let i = 0; i < 10; i++) {
+        soma += parseInt(cpf.charAt(i)) * (11 - i);
+    }
 
-  if ((Resto == 10) || (Resto == 11)) 
-    Resto = 0
+    resto = (soma * 10) % 11;
 
-  if (Resto != parseInt(strCPF.substring(10, 11) ) )
-    return false
+    if (resto === 10) resto = 0;
 
-  return true
+    return resto === parseInt(cpf.charAt(10));
 }

@@ -1,41 +1,108 @@
-const API_BUSCAR_TODOS_ESTAGIARIOS = 'http://localhost:8000/Estagiarios/BuscarTodos';
-
+const API_BUSCAR_TODOS_ESTAGIARIOS = "http://localhost:8000/Estagiarios/BuscarTodos";
+const API_DELETAR = "http://localhost:8000/Estagiarios/Deletar";
 
 
 async function listarEstagiarios() {
 
-    const response = await fetch(API_BUSCAR_TODOS_ESTAGIARIOS);
-    const estagiarios = await response.json();
-    const tbody = document.querySelector("tbody");
+    try {
 
+        const response = await fetch(API_BUSCAR_TODOS_ESTAGIARIOS);
 
-    tbody.innerHTML = "";
+        const estagiarios = await response.json();
 
-    estagiarios.forEach((estagiario) => {
+        const tbody = document.querySelector("tbody");
 
+        tbody.innerHTML = "";
 
-        const tr = document.createElement("tr");
+        estagiarios.forEach(estagiario => {
 
-        tr.innerHTML = `
+            const tr = document.createElement("tr");
 
-            <td>${estagiario.nome}</td>
-            <td>${estagiario.instituicao}</td>
-            <td>${estagiario.cargo}</td>
-            <td>${estagiario.gestor}</td>
+            tr.innerHTML = `
 
-        `;
+                <td>${estagiario.nome}</td>
+                <td>${estagiario.instituicao}</td>
+                <td>${estagiario.cargo}</td>
 
+                <td class="acoes">
 
+                    <button
+                        class="btn-edit"
+                        onclick="editar(${estagiario.id})"
+                        title="Editar">
+                        ✏️
+                    </button>
 
-        tbody.appendChild(tr);
+                    <button
+                        class="btn-delete"
+                        onclick="deletar(${estagiario.id})"
+                        title="Excluir">
+                        🗑️
+                    </button>
 
-    });
+                </td>
+
+            `;
+
+            tbody.appendChild(tr);
+
+        });
+
+    } catch (erro) {
+
+        console.error(erro);
+        alert("Erro ao buscar os estagiários.");
+
+    }
 
 }
 
 
-document.addEventListener("DOMContentLoaded",()=>{
+function editar(id) {
 
-	listarEstagiarios();
+    window.location.href = `novoEstagiario.html?id=${id}&origem=gestor`;
+
+}
+
+
+async function deletar(id) {
+
+    if (!confirm("Deseja realmente excluir este estagiário?")) {
+        return;
+    }
+
+    try {
+
+        const response = await fetch(`${API_DELETAR}/${id}`, {
+            method: "DELETE"
+        });
+
+        if (response.ok) {
+
+            alert("Estagiário excluído com sucesso!");
+
+            listarEstagiarios();
+
+        } else {
+
+            const erro = await response.text();
+
+            alert(erro);
+
+        }
+
+    } catch (erro) {
+
+        console.error(erro);
+        alert("Erro ao excluir o estagiário.");
+
+    }
+
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    listarEstagiarios();
 
 });
