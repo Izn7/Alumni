@@ -1,501 +1,299 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestão de Estagiários | ALUMNI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/tarefasUsuarios.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gestão de Estagiários | ALUMNI</title>
+
+
+
+<link
+	href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+	rel="stylesheet">
+
+<link rel="stylesheet" href="css/tarefasUsuarios.css">
+
+
+
+<script defer src="js/tarefasUsuarios.js"></script>
+
 </head>
+
+
+
 <body>
 
-<div class="amb"></div>
 
-<div class="sov" id="sov" onclick="closeSidebar()"></div>
 
-<aside class="sidebar" id="sb">
-    <div class="sb-hd">
-        <div class="nav-logo">
-            <div class="logo-mark">GDE</div>
-            <span class="logo-word">ALUMNI</span>
-        </div>
-        <button class="sb-close" onclick="closeSidebar()">✕</button>
-    </div>
-    <nav class="snav">
-        <a href="#" class="on">
-            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            Gestão de Estagiários
-        </a>
-        <a href="#">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-            Relatórios
-        </a>
-        <a href="#">
-            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            Configurações
-        </a>
-        <div class="sdiv"></div>
-        <a href="#" class="logout">
-            <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-            Sair
-        </a>
-    </nav>
-</aside>
+	<div class="amb"></div>
 
-<nav class="nav">
-    <div class="nav-in">
-        <div class="nav-brand-wrapper">
-            <button class="burger" onclick="openSidebar()" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
-            <div class="nav-logo">
-                <div class="logo-mark">GDE</div>
-                <span class="logo-word">ALUMNI</span>
-            </div>
-        </div>
-        <a href="#" class="nav-user-link">
-            <div class="nav-avatar">AD</div>
-            <div>
-                <div class="nu-name">Administrador</div>
-                <div class="nu-role">Gestor</div>
-            </div>
-        </a>
-    </div>
-</nav>
+	<div class="sov" id="sov" onclick="closeSidebar()"></div>
 
-<main class="main">
-    <div class="container">
 
-        <header class="pg-hd">
-            <div>
-                <h1 class="pg-title">GESTÃO DE <span class="hl">ESTAGIÁRIOS</span></h1>
-                <p class="pg-sub">Acompanhe e gerencie as atividades de cada estagiário.</p>
-            </div>
-            <button class="btn-new" onclick="openNewInternModal()">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Novo Estagiário
-            </button>
-        </header>
 
-        <div class="stats-row">
-            <div class="stat-card">
-                <div class="stat-icon orange">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </div>
-                <div>
-                    <div class="stat-val orange" id="stat-total">0</div>
-                    <div class="stat-lbl">Total de estagiários</div>
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon green">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-                </div>
-                <div>
-                    <div class="stat-val green" id="stat-tasks-today">0</div>
-                    <div class="stat-lbl">Tarefas atribuídas hoje</div>
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon amber">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                </div>
-                <div>
-                    <div class="stat-val amber" id="stat-no-tasks">0</div>
-                    <div class="stat-lbl">Sem tarefas hoje</div>
-                </div>
-            </div>
-        </div>
 
-        <div class="filter-bar">
-            <div class="search-wrap">
-                <div class="search-icon">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                </div>
-                <input type="text" id="search-input" placeholder="Buscar por nome, CPF ou setor…" oninput="renderInterns()">
-            </div>
-            <select id="sector-filter" onchange="renderInterns()">
-                <option value="">Todos os setores</option>
-            </select>
-        </div>
+	<aside class="sidebar" id="sb">
 
-        <div class="table-container">
-            <table class="interns-table">
-                <thead>
-                    <tr>
-                        <th>Estagiário</th>
-                        <th>Setor & Supervisão</th>
-                        <th>Contato</th>
-                        <th>Tarefas (Hoje)</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="interns-tbody">
-                    </tbody>
-            </table>
-        </div>
-        
-        <div id="empty-state" class="empty-state" style="display:none">
-            <div class="empty-state-icon">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
-            </div>
-            <p style="font-size:.85rem;font-weight:600">Nenhum estagiário encontrado.</p>
-        </div>
+		<div class="sb-hd">
 
-    </div>
-</main>
+			<div class="nav-logo">
 
-<div class="modal-overlay" id="taskModal" onclick="handleModalOverlayClick(event)">
-    <div class="modal-box">
-        <div class="modal-hd">
-            <div class="modal-avatar" id="modal-avatar"></div>
-            <div>
-                <div class="modal-name" id="modal-name"></div>
-                <div class="modal-meta" id="modal-meta"></div>
-            </div>
-            <button class="modal-close" onclick="closeModal()">✕</button>
-        </div>
+				<div class="logo-mark">GDE</div>
 
-        <div class="modal-body">
-            
-            <div class="modal-section-date">
-                <div class="date-label-wrap">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                        <line x1="16" y1="2" x2="16" y2="6"></line>
-                        <line x1="8" y1="2" x2="8" y2="6"></line>
-                        <line x1="3" y1="10" x2="21" y2="10"></line>
-                    </svg>
-                    <label>Data de Atribuição</label>
-                </div>
-                <div class="date-input-wrap">
-                    <input type="date" id="task-date" class="date-input" oninput="onDateChange()">
-                    <span class="date-badge" id="date-badge">Hoje</span>
-                </div>
-            </div>
+				<span class="logo-word">ALUMNI</span>
 
-            <div id="alert-amber" class="alert-amber" style="display:none">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                Nenhuma tarefa atribuída. Selecione abaixo.
-            </div>
-            <div id="alert-green" class="alert-green" style="display:none">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>
-                <span id="alert-green-msg">Tarefas já atribuídas nesta data.</span>
-            </div>
+			</div>
 
-            <hr class="modal-divider">
+			<button class="sb-close" onclick="closeSidebar()">✕</button>
 
-            <div class="section-header-tasks">
-                <div class="section-label" id="section-label">Tarefas disponíveis</div>
-                <div class="task-search-wrap">
-                    <div class="ts-icon">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                    </div>
-                    <input type="text" id="task-search" placeholder="Filtrar tarefas…" oninput="renderTaskList()">
-                </div>
-            </div>
-            
-            <div class="task-list-scroll" id="task-list"></div>
-        </div>
+		</div>
 
-        <div class="modal-ft">
-            <span class="sel-badge"><span id="sel-count">0</span> selecionada(s)</span>
-            <button class="btn-clear" onclick="clearSel()">Limpar</button>
-            <button class="btn-save" onclick="saveAssignments()">Salvar atribuições</button>
-        </div>
-    </div>
-</div>
 
-<div class="toast-wrap" id="toast-wrap"></div>
 
-<script>
-const INTERNS = [
-    {id:1,name:"Ana Paula Ferreira", cpf:"012.345.678-90",phone:"(31) 99100-0001",email:"ana.ferreira@email.com",   sector:"Marketing",  supervisor:"Carlos Mendes",  startDate:"2024-03-01"},
-    {id:2,name:"Bruno Oliveira",      cpf:"023.456.789-01",phone:"(31) 99100-0002",email:"bruno.oliveira@email.com",  sector:"TI",         supervisor:"Sandra Lima",    startDate:"2024-01-15"},
-    {id:3,name:"Camila Santos",       cpf:"034.567.890-12",phone:"(31) 99100-0003",email:"camila.santos@email.com",   sector:"RH",         supervisor:"Roberto Alves",  startDate:"2023-11-20"},
-    {id:4,name:"Diego Martins",       cpf:"045.678.901-23",phone:"(31) 99100-0004",email:"diego.martins@email.com",   sector:"Financeiro", supervisor:"Patrícia Costa", startDate:"2024-02-10"},
-    {id:5,name:"Eduarda Rocha",       cpf:"056.789.012-34",phone:"(31) 99100-0005",email:"eduarda.rocha@email.com",   sector:"TI",         supervisor:"Sandra Lima",    startDate:"2024-04-05"},
-    {id:6,name:"Felipe Gomes",        cpf:"067.890.123-45",phone:"(31) 99100-0006",email:"felipe.gomes@email.com",    sector:"Jurídico",   supervisor:"Marcos Vieira",  startDate:"2024-01-08"},
-    {id:7,name:"Gabriela Torres",     cpf:"078.901.234-56",phone:"(31) 99100-0007",email:"gabriela.torres@email.com", sector:"Marketing",  supervisor:"Carlos Mendes",  startDate:"2023-12-01"},
-    {id:8,name:"Henrique Barbosa",    cpf:"089.012.345-67",phone:"(31) 99100-0008",email:"henrique.barbosa@email.com",sector:"Financeiro", supervisor:"Patrícia Costa", startDate:"2024-03-18"},
-];
+		<nav class="snav">
 
-const TASKS = [
-    {id:1, name:"Relatório semanal de métricas",       category:"Relatório",      duration:"2h",   tag:"orange"},
-    {id:2, name:"Atendimento ao cliente",              category:"Suporte",        duration:"1h30", tag:"green"},
-    {id:3, name:"Análise de planilha financeira",      category:"Financeiro",     duration:"3h",   tag:"amber"},
-    {id:4, name:"Reunião de alinhamento",              category:"Reunião",        duration:"1h",   tag:"blue"},
-    {id:5, name:"Criação de post para redes sociais",  category:"Marketing",      duration:"2h",   tag:"orange"},
-    {id:6, name:"Triagem de currículos",               category:"RH",             duration:"2h30", tag:"green"},
-    {id:7, name:"Suporte técnico a usuários",          category:"TI",             duration:"1h",   tag:"amber"},
-    {id:8, name:"Revisão de contratos",                category:"Jurídico",       duration:"3h30", tag:"red"},
-    {id:9, name:"Elaboração de proposta comercial",    category:"Comercial",      duration:"2h",   tag:"blue"},
-    {id:10,name:"Teste de software interno",           category:"TI",             duration:"4h",   tag:"amber"},
-    {id:11,name:"Organização do arquivo físico",       category:"Administrativo", duration:"1h30", tag:"green"},
-    {id:12,name:"Pesquisa de mercado",                 category:"Marketing",      duration:"3h",   tag:"blue"},
-];
+			<a href="#" class="on">Gestão de Estagiários</a> <a href="#">Relatórios</a>
 
-const assignments = {};
-let currInternId = null;
-let tempSel = new Set();
+			<a href="#">Configurações</a>
 
-const AV_COLORS = [
-    {bg:"rgba(249,115,22,.15)",  border:"rgba(249,115,22,.5)",  color:"#f97316"},
-    {bg:"rgba(59,130,246,.15)",  border:"rgba(59,130,246,.5)",  color:"#3b82f6"},
-    {bg:"rgba(34,197,94,.15)",   border:"rgba(34,197,94,.5)",   color:"#22c55e"},
-    {bg:"rgba(168,85,247,.15)",  border:"rgba(168,85,247,.5)",  color:"#a855f7"},
-    {bg:"rgba(236,72,153,.15)",  border:"rgba(236,72,153,.5)",  color:"#ec4899"},
-    {bg:"rgba(20,184,166,.15)",  border:"rgba(20,184,166,.5)",  color:"#14b8a6"},
-    {bg:"rgba(245,158,11,.15)",  border:"rgba(245,158,11,.5)",  color:"#f59e0b"},
-    {bg:"rgba(239,68,68,.15)",   border:"rgba(239,68,68,.5)",   color:"#ef4444"},
-];
+			<div class="sdiv"></div>
 
-function avColor(id){ return AV_COLORS[(id-1) % AV_COLORS.length]; }
-function initials(n){ const p=n.trim().split(" "); return (p[0][0]+(p[p.length-1]?.[0]||"")).toUpperCase(); }
-function todayStr(){ const d=new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`; }
-function fmtDate(s){ if(!s)return""; const[y,m,d]=s.split("-"); return `${d}/${m}/${y}`; }
-function isToday(s){ return s===todayStr(); }
+			<a href="#" class="logout">Sair</a>
 
-function updateStats(){
-    const today=todayStr();
-    document.getElementById("stat-total").textContent=INTERNS.length;
-    let tasks=0,none=0;
-    INTERNS.forEach(i=>{
-        const s=(assignments[i.id]||{})[today];
-        if(s&&s.size>0) tasks+=s.size; else none++;
-    });
-    document.getElementById("stat-tasks-today").textContent=tasks;
-    document.getElementById("stat-no-tasks").textContent=none;
-}
+		</nav>
 
-const CIRC = 113; // Circunferência ajustada para r=18 (2 * pi * 18)
-function setRing(internId, dateStr){
-    const s=(assignments[internId]||{})[dateStr];
-    const count=s?s.size:0, total=TASKS.length;
-    const pct=total?Math.round(count/total*100):0;
-    const offset=CIRC-(CIRC*pct/100);
-    
-    const fg=document.querySelector(`[data-ring="${internId}"]`);
-    if(fg) fg.style.strokeDashoffset=offset;
-    
-    const pe=document.querySelector(`[data-rpct="${internId}"]`);
-    if(pe) pe.textContent=pct+"%";
-    
-    const ce=document.querySelector(`[data-rcnt="${internId}"]`);
-    if(ce) ce.textContent=`${count}/${total} tarefas`;
-}
+	</aside>
 
-function renderInterns(){
-    const q=document.getElementById("search-input").value.toLowerCase();
-    const sec=document.getElementById("sector-filter").value;
-    const tbody=document.getElementById("interns-tbody");
-    const empty=document.getElementById("empty-state");
-    const tableCont=document.querySelector(".table-container");
-    const today=todayStr();
 
-    const list=INTERNS.filter(i=>{
-        const mq=!q||i.name.toLowerCase().includes(q)||i.cpf.includes(q)||i.sector.toLowerCase().includes(q);
-        const ms=!sec||i.sector===sec;
-        return mq&&ms;
-    });
 
-    if(!list.length){ 
-        tableCont.style.display="none"; 
-        empty.style.display="block"; 
-        return; 
-    }
-    
-    tableCont.style.display="block";
-    empty.style.display="none";
 
-    tbody.innerHTML=list.map(intern=>{
-        const c=avColor(intern.id), ini=initials(intern.name);
-        const s=(assignments[intern.id]||{})[today];
-        const count=s?s.size:0,total=TASKS.length;
-        const pct=total?Math.round(count/total*100):0;
-        const offset=CIRC-(CIRC*pct/100);
-        return `
-        <tr>
-            <td>
-                <div class="td-intern">
-                    <div class="avatar" style="background:${c.bg};border-color:${c.border};color:${c.color}">
-                        ${ini}<div class="status-dot"></div>
-                    </div>
-                    <div>
-                        <div class="intern-name">${intern.name}</div>
-                        <div class="intern-sub">CPF: ${intern.cpf}</div>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="intern-text bold">${intern.sector}</div>
-                <div class="intern-sub">Sup: ${intern.supervisor}</div>
-            </td>
-            <td>
-                <div class="intern-text">${intern.email}</div>
-                <div class="intern-sub">${intern.phone}</div>
-            </td>
-            <td>
-                <div class="td-prog">
-                    <div class="ring-wrap-sm">
-                        <svg width="44" height="44" viewBox="0 0 44 44">
-                            <circle class="ring-bg" cx="22" cy="22" r="18"/>
-                            <circle class="ring-fg" cx="22" cy="22" r="18"
-                                data-ring="${intern.id}"
-                                style="stroke:${c.color};stroke-dashoffset:${offset}"/>
-                        </svg>
-                        <div class="ring-label">
-                            <span class="ring-pct" data-rpct="${intern.id}" style="color:${c.color}">${pct}%</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="ring-info-main" data-rcnt="${intern.id}">${count}/${total} tarefas</div>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="td-actions">
-                    <button class="btn-assign" onclick="openModal(${intern.id})">Atribuir</button>
-                    <button class="btn-profile" title="Ver Perfil">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                            <circle cx="12" cy="7" r="4"/>
-                        </svg>
-                    </button>
-                </div>
-            </td>
-        </tr>`;
-    }).join("");
-}
 
-function openModal(id){
-    currInternId = id;
-    const intern = INTERNS.find(i => i.id === id);
-    const c = avColor(id);
-    const ini = initials(intern.name);
-    
-    const av = document.getElementById("modal-avatar");
-    av.textContent = ini;
-    av.style.background = c.bg;
-    av.style.borderColor = c.border;
-    av.style.color = c.color;
-    
-    document.getElementById("modal-name").textContent = intern.name;
-    document.getElementById("modal-meta").textContent = `${intern.sector} • ${intern.cpf}`;
-    
-    document.getElementById("task-date").value = todayStr();
-    document.getElementById("task-search").value = "";
-    onDateChange();
-    
-    document.getElementById("taskModal").classList.add("open");
-}
+	<nav class="nav">
 
-function closeModal(){ document.getElementById("taskModal").classList.remove("open"); }
-function handleModalOverlayClick(e){ if(e.target === e.currentTarget) closeModal(); }
-function openSidebar(){ document.getElementById("sb").classList.add("open"); document.getElementById("sov").classList.add("open"); }
-function closeSidebar(){ document.getElementById("sb").classList.remove("open"); document.getElementById("sov").classList.remove("open"); }
-function openNewInternModal() { showToast("Módulo em Desenvolvimento", "A criação de novos registros estará disponível em breve.", "info"); }
+		<div class="nav-in">
 
-function onDateChange() {
-    const dateInput = document.getElementById("task-date").value;
-    const badge = document.getElementById("date-badge");
-    badge.textContent = isToday(dateInput) ? "Hoje" : fmtDate(dateInput);
-    
-    tempSel = new Set((assignments[currInternId] || {})[dateInput] || []);
-    
-    const alertAmber = document.getElementById("alert-amber");
-    const alertGreen = document.getElementById("alert-green");
-    const alertGreenMsg = document.getElementById("alert-green-msg");
-    
-    if (tempSel.size > 0) {
-        alertAmber.style.display = "none";
-        alertGreen.style.display = "flex";
-        alertGreenMsg.textContent = `${tempSel.size} tarefa(s) atribuída(s) nesta data.`;
-    } else {
-        alertAmber.style.display = "flex";
-        alertGreen.style.display = "none";
-    }
-    
-    renderTaskList();
-    updateSelectedCount();
-}
+			<div class="nav-brand-wrapper">
 
-function renderTaskList() {
-    const q = document.getElementById("task-search").value.toLowerCase();
-    const listCont = document.getElementById("task-list");
-    const filtered = TASKS.filter(t => t.name.toLowerCase().includes(q) || t.category.toLowerCase().includes(q));
-    
-    if(!filtered.length) {
-        listCont.innerHTML = '<div class="empty-state"><p style="font-size:.75rem">Nenhuma tarefa encontrada.</p></div>';
-        return;
-    }
-    
-    listCont.innerHTML = filtered.map(t => {
-        const isSel = tempSel.has(t.id) ? "sel" : "";
-        return `
-            <div class="task-item ${isSel}" onclick="toggleTask(${t.id})">
-                <div class="t-check"><div class="t-check-inner"></div></div>
-                <div class="t-name">${t.name}</div>
-                <div class="t-dur">${t.duration}</div>
-                <div class="t-tag tag-${t.tag}">${t.category}</div>
-            </div>
-        `;
-    }).join("");
-}
+				<button class="btn-back" onclick="voltarPagina()">
+    ←
+</button>
 
-function toggleTask(id) {
-    if (tempSel.has(id)) tempSel.delete(id);
-    else tempSel.add(id);
-    renderTaskList();
-    updateSelectedCount();
-}
 
-function updateSelectedCount() { document.getElementById("sel-count").textContent = tempSel.size; }
-function clearSel() { tempSel.clear(); renderTaskList(); updateSelectedCount(); }
 
-function saveAssignments() {
-    const dateInput = document.getElementById("task-date").value;
-    if (!assignments[currInternId]) assignments[currInternId] = {};
-    assignments[currInternId][dateInput] = new Set(tempSel);
-    
-    closeModal();
-    setRing(currInternId, todayStr());
-    renderInterns();
-    updateStats();
-    showToast("Sucesso", "Atribuições de tarefas atualizadas!", "success");
-}
+				<div class="nav-logo">
 
-function showToast(title, sub, type="success") {
-    const wrap = document.getElementById("toast-wrap");
-    const toast = document.createElement("div");
-    toast.className = "toast";
-    toast.style.borderLeftColor = type === "success" ? "var(--success)" : "var(--info)";
-    
-    toast.innerHTML = `
-        <div class="toast-ic" style="color:${type==='success'?'var(--success)':'var(--info)'}">${type==='success'?'✓':'ℹ'}</div>
-        <div>
-            <div class="toast-title">${title}</div>
-            <div class="toast-sub">${sub}</div>
-        </div>
-    `;
-    wrap.appendChild(toast);
-    setTimeout(() => {
-        toast.style.animation = "fadeOut 0.3s ease forwards";
-        setTimeout(() => toast.remove(), 300);
-    }, 3000);
-}
+					<div class="logo-mark">GDE</div>
 
-// Inicializar Filtros
-const sectors = [...new Set(INTERNS.map(i => i.sector))];
-const select = document.getElementById("sector-filter");
-sectors.forEach(s => {
-    const opt = document.createElement("option");
-    opt.value = s; opt.textContent = s; select.appendChild(opt);
-});
+					<span class="logo-word">ALUMNI</span>
 
-// Render Inicial
-renderInterns();
-updateStats();
-</script>
+				</div>
+
+			</div>
+
+
+
+			<div class="nav-user-link">
+
+				<div class="nav-avatar">AD</div>
+
+				<div>
+
+					<div class="nu-name">Administrador</div>
+
+					<div class="nu-role">Gestor</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+
+
+
+
+
+	<main class="main">
+
+		<div class="container">
+
+
+
+
+			<div class="stats-row">
+
+				<div class="stat-card">
+
+					<div class="stat-icon orange"></div>
+
+					<div>
+
+						<div class="stat-val orange" id="stat-total">0</div>
+
+						<div class="stat-lbl">Total de estagiários</div>
+
+					</div>
+
+				</div>
+
+
+
+				<div class="stat-card">
+
+					<div class="stat-icon green"></div>
+
+					<div>
+
+						<div class="stat-val green" id="stat-tasks-today">0</div>
+
+						<div class="stat-lbl">Tarefas atribuídas hoje</div>
+
+					</div>
+
+				</div>
+
+
+
+				<div class="stat-card">
+
+					<div class="stat-icon amber"></div>
+
+					<div>
+
+						<div class="stat-val amber" id="stat-no-tasks">0</div>
+
+						<div class="stat-lbl">Sem tarefas hoje</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+
+
+			<div class="filter-bar">
+
+
+
+				<div class="search-wrap">
+
+					<div class="search-icon"></div>
+
+
+
+					<input type="text" id="search-input" placeholder="Buscar..."
+						oninput="listarEstagiarios()">
+
+				</div>
+
+
+
+				<select id="sector-filter" onchange="listarEstagiarios()">
+
+					<option value="">Todos os setores</option>
+
+				</select>
+
+			</div>
+
+
+
+
+
+			<div class="table-container">
+
+				<table class="interns-table">
+
+					<thead>
+
+						<tr>
+
+							<th>Estagiário</th>
+
+							<th>Cargo</th>
+
+							<th>Email</th>
+
+							<th>Ações</th>
+
+						</tr>
+
+					</thead>
+
+
+
+					<tbody id="interns-tbody"></tbody>
+
+				</table>
+
+			</div>
+
+
+
+			<div id="empty-state" class="empty-state" style="display: none">
+
+				Nenhum estagiário encontrado.</div>
+
+
+
+		</div>
+
+	</main>
+
+
+
+
+
+	<div id="painel-tarefas" class="painel-tarefas">
+
+
+
+		<div class="painel-header">
+
+			<h3 id="nome-estagiario">Estagiário</h3>
+
+			<button onclick="fecharPainel()" class="btn-close">✕</button>
+
+		</div>
+
+
+
+		<div class="painel-search">
+
+			<input type="text" id="busca-tarefa" placeholder="Buscar tarefa..."
+				oninput="renderizarTarefas()">
+
+		</div>
+
+
+
+		<div id="lista-tarefas" class="lista-tarefas"></div>
+
+
+
+		<div class="painel-footer">
+
+			<button class="btn-cancel" onclick="fecharPainel()">Cancelar</button>
+
+			<button class="btn-save" onclick="salvarTarefasSelecionadas()">Salvar</button>
+
+		</div>
+
+
+
+	</div>
+
+
+
 </body>
+
 </html>

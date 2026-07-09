@@ -30,4 +30,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	.formLogin().disable();// Desabilita o logout padrão do Spring Security
 	}
 	
+	   
+	   
+	   
 }
+
+

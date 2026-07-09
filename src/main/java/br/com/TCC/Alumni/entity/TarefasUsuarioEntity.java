@@ -23,9 +23,9 @@ public class TarefasUsuarioEntity implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String descricao;
+
 	private String status;
-	private boolean prioridade;
+
 	
 	
 
@@ -37,13 +37,7 @@ public class TarefasUsuarioEntity implements Serializable{
 		this.id = id;
 	}
 
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
+	
 
 	public String getStatus() {
 		return status;
@@ -53,13 +47,7 @@ public class TarefasUsuarioEntity implements Serializable{
 		this.status = status;
 	}
 
-	public boolean isPrioridade() {
-		return prioridade;
-	}
-
-	public void setPrioridade(boolean prioridade) {
-		this.prioridade = prioridade;
-	}
+	
 
 	public TarefasEntity getTarefasEntity() {
 		return tarefasEntity;
@@ -69,12 +57,14 @@ public class TarefasUsuarioEntity implements Serializable{
 		this.tarefasEntity = tarefasEntity;
 	}
 
+	
+
 	public EstagiariosEntity getEstagiarios() {
-		return Estagiarios;
+		return estagiarios;
 	}
 
 	public void setEstagiarios(EstagiariosEntity estagiarios) {
-		Estagiarios = estagiarios;
+		this.estagiarios = estagiarios;
 	}
 
 	public static long getSerialversionuid() {
@@ -87,5 +77,5 @@ public class TarefasUsuarioEntity implements Serializable{
 	
 	@ManyToOne
 	@JoinColumn (name = "idEstagiarios")
-	private EstagiariosEntity Estagiarios;
+	private EstagiariosEntity estagiarios;
 }

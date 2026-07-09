@@ -46,8 +46,11 @@ public class TarefasUsuarioControllers {
 						@PostMapping("/Gravar")
 						@ResponseStatus(HttpStatus.CREATED)
 						public TarefasUsuarioEntity gravarTarefasUsuario(@RequestBody TarefasUsuarioEntity tarefasUsuario) {
-							return tarefasUsuarioRepository.save(tarefasUsuario);
-							
+
+						    tarefasUsuario.setStatus("PENDENTE");
+
+						    return tarefasUsuarioRepository.save(tarefasUsuario);
+
 						}
 						
 						@PutMapping("/Atualizar/{id}")
@@ -76,7 +79,12 @@ public class TarefasUsuarioControllers {
 							}
 						
 					
-				
+						@GetMapping("/BuscarPorEstagiario/{id}")
+						public List<TarefasUsuarioEntity> buscarPorEstagiario(@PathVariable Integer id){
+
+						    return tarefasUsuarioRepository.findByEstagiariosIdAndStatus(id, "PENDENTE");
+
+						}
 			}
 
 	

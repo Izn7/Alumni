@@ -1,25 +1,29 @@
-// Chamando API
-const API_SALVAR_TAREFA = 'http://localhost:8000/TarefasUsuario/gravar';
-const API_ATUALIZAR_TAREFA = 'http://localhost:8000/TarefasUsuario/Atualizar';
+
+const API_SALVAR_TAREFA = 'http://localhost:8000/Tarefas/Gravar';
+const API_ATUALIZAR_TAREFA = 'http://localhost:8000/Tarefas/Atualizar';
 
 let editandoId = null;
 
+
 async function cadastrarTarefa() {
 
+	const botao = document.getElementById("btnCadastrar");
+
+	botao.disabled = false;
+	botao.textContent = "CADASTRAR TAREFA";
+	
     const tarefa = {
 
-        nome: document.getElementById("nome").value,
+        nome: document.getElementById("nomeTarefa").value,
         categoria: document.getElementById("categoria").value,
         prioridade: document.getElementById("prioridade").value,
         status: document.getElementById("status").value,
         dataInicio: document.getElementById("dataInicio").value,
         dataEntrega: document.getElementById("dataEntrega").value,
         cargaHoraria: parseInt(document.getElementById("cargaHoraria").value),
-        descricao: document.getElementById("descricao").value,
+        descricao: document.getElementById("objetivo").value,
 
-        estagiario: {
-            id: parseInt(document.getElementById("estagiario").value)
-        }
+        
     };
 
     let response;
@@ -51,12 +55,22 @@ async function cadastrarTarefa() {
         });
     }
 
-    if (response.ok) {
-        alert("Tarefa salva com sucesso!");
-        buscarTarefas(); // função de listagem
-        document.getElementById("formTarefa").reset();
-        editandoId = null;
-    } else {
-        alert("Erro ao salvar tarefa.");
-    }
+	if (response.ok) {
+
+	    alert(editandoId
+	        ? "Tarefa atualizada com sucesso!"
+	        : "Tarefa cadastrada com sucesso!");
+
+	    editandoId = null;
+
+	  
+	    window.history.back();
+
+	} else {
+
+	    const erro = await response.text();
+	    console.log(erro);
+	    alert(erro);
+
+	}
 }

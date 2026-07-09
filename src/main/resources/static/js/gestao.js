@@ -106,3 +106,16 @@ document.addEventListener("DOMContentLoaded", () => {
     listarEstagiarios();
 
 });
+
+document.addEventListener("DOMContentLoaded", carregarGestor);
+
+async function carregarGestor() {
+
+    const gestor = await buscarGestorLogado();
+
+    document.getElementById("nomeGestor").textContent =
+        gestor.nome + " " + gestor.sobrenome;
+
+    document.getElementById("cargoGestor").textContent =
+        gestor.cargo;
+}

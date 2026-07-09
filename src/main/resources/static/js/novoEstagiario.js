@@ -48,9 +48,7 @@ async function carregarEstagiario() {
     document.getElementById("cargaHoraria").value = estagiario.cargaHoraria;
 
     
-    document.getElementById("gestor").value = estagiario.gestor.id;
-
-}
+    }
 
 async function cadastrarEstagiario() {
 
@@ -70,9 +68,7 @@ async function cadastrarEstagiario() {
 	    cargaHoraria: document.getElementById("cargaHoraria").value,
 	    isFirstLogin: true,
 
-	    gestor: {
-	        id: parseInt(document.getElementById("gestor").value)
-	    }
+	   
 
 	};
 	
