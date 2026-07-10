@@ -2,6 +2,7 @@ package br.com.TCC.Alumni.repository;
 
 
 
+
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,4 +15,8 @@ import br.com.TCC.Alumni.entity.EstagiariosEntity;
 public interface EstagiariosRepository extends JpaRepository<EstagiariosEntity, Integer> {
 
 	Optional <EstagiariosEntity> findByEmail(String email);
+
+
+	
+	
 }

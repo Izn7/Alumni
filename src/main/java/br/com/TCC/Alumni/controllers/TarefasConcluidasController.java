@@ -23,14 +23,19 @@ import org.springframework.web.multipart.MultipartFile;
 import br.com.TCC.Alumni.entity.EstagiariosEntity;
 import br.com.TCC.Alumni.entity.TarefasConcluidasEntity;
 import br.com.TCC.Alumni.entity.TarefasEntity;
+import br.com.TCC.Alumni.entity.TarefasUsuarioEntity;
 import br.com.TCC.Alumni.repository.EstagiariosRepository;
 import br.com.TCC.Alumni.repository.TarefasConcluidasRepository;
 import br.com.TCC.Alumni.repository.TarefasRepository;
+import br.com.TCC.Alumni.repository.TarefasUsuarioRepository;
 
 @RestController
 @RequestMapping("/TarefasConcluidas")
 public class TarefasConcluidasController {
 
+	@Autowired
+	private TarefasUsuarioRepository tarefasUsuarioRepository;
+	
     @Autowired
     private TarefasConcluidasRepository repository;
 
@@ -79,6 +84,7 @@ public class TarefasConcluidasController {
     public TarefasConcluidasEntity gravar(
 
             @RequestParam Integer idEstagiario,
+            @RequestParam Integer idTarefaUsuario,
             @RequestParam Integer idTarefa,
             @RequestParam(required = false) String observacoes,
             @RequestParam MultipartFile arquivo
@@ -122,8 +128,31 @@ public class TarefasConcluidasController {
         concluida.setEstagiario(estagiario);
         concluida.setTarefasEntity(tarefa);
 
-        return repository.save(concluida);
+
+        TarefasConcluidasEntity salva = repository.save(concluida);
+
+
+
+        TarefasUsuarioEntity tarefaUsuario =
+                tarefasUsuarioRepository.findById(idTarefaUsuario)
+                .orElseThrow(() ->
+                    new RuntimeException("Tarefa do usuário não encontrada")
+                );
+
+
+        tarefaUsuario.setStatus("CONCLUIDA");
+
+
+        tarefasUsuarioRepository.save(tarefaUsuario);
+
+
+
+        return salva;
+     
+        
 
     }
 
+    
+    
 }

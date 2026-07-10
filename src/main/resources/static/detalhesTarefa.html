@@ -1,260 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minhas Tarefas | ALUMNI</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="css/detalhesTarefa.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Tarefas | ALUMNI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/detalhesTarefa.css">
 </head>
-
 <body>
 
 <div class="amb"></div>
 
-<div class="sov" id="sov"
-onclick="this.classList.remove('open');document.getElementById('sb').classList.remove('open')"></div>
+<div class="sov" id="sov" onclick="this.classList.remove('open');document.getElementById('sb').classList.remove('open')"></div>
 
 <aside class="sidebar" id="sb">
-
     <div class="sb-hd">
-
         <div class="nav-logo">
-            <img src="img/GDE SENAI.png"
-                 alt="ALUMNI"
-                 class="logo-img">
+            <img src="img/GDESENAI.png" alt="ALUMNI" class="logo-img">
         </div>
-
-        <button class="sb-close"
-        onclick="document.getElementById('sb').classList.remove('open');
-                 document.getElementById('sov').classList.remove('open')">
-
+        <button class="sb-close" onclick="document.getElementById('sb').classList.remove('open'); document.getElementById('sov').classList.remove('open')">
             ✕
-
         </button>
-
     </div>
 
     <nav class="snav">
-
         <a href="detalhesTarefa.html" class="on">
-
-            <svg viewBox="0 0 24 24">
-
+            <svg class="icon-menu" viewBox="0 0 24 24">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-
                 <polyline points="14 2 14 8 20 8"/>
-
                 <line x1="16" y1="13" x2="8" y2="13"/>
-
                 <line x1="16" y1="17" x2="8" y2="17"/>
-
                 <polyline points="10 9 9 9 8 9"/>
-
             </svg>
-
             Minhas Tarefas
-
         </a>
 
         <a href="perfilEstagiario.html">
-
-            <svg viewBox="0 0 24 24">
-
+            <svg class="icon-menu" viewBox="0 0 24 24">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-
                 <circle cx="12" cy="7" r="4"/>
-
             </svg>
-
             Meu Perfil
-
         </a>
 
         <div class="sdiv"></div>
 
         <a href="index.html" class="logout">
-
-            <svg viewBox="0 0 24 24">
-
+            <svg class="icon-menu" viewBox="0 0 24 24">
                 <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
-
                 <polyline points="16 17 21 12 16 7"/>
-
                 <line x1="21" y1="12" x2="9" y2="12"/>
-
             </svg>
-
             Sair
-
         </a>
-
     </nav>
-
 </aside>
 
 <nav class="nav">
-
     <div class="nav-in">
-
         <div style="display:flex;align-items:center;gap:14px">
-
-            <button class="burger"
-
-            onclick="document.getElementById('sb').classList.add('open');
-                     document.getElementById('sov').classList.add('open')">
-
+            <button class="burger" onclick="document.getElementById('sb').classList.add('open'); document.getElementById('sov').classList.add('open')">
                 <span></span>
-
                 <span></span>
-
                 <span></span>
-
             </button>
-
             <div class="nav-logo">
-
-                <img src="img/GDE SENAI.png"
-                     class="logo-img">
-
+                <img src="img/GDESENAI.png" class="logo-img">
             </div>
-
         </div>
 
-        <a href="perfilEstagiario.html"
-           class="nav-user-link">
-
+        <a href="perfilEstagiario.html" class="nav-user-link">
             <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
-
             <div>
-
-                <div class="nu-name">
-                    Rafael Richard
-                </div>
-
-                <div class="nu-role">
-                    Estagiário
-                </div>
-
+                <div class="nu-name" id="nomeUsuario">Usuário</div>
+                <div class="nu-role" id="perfilUsuario">Estagiário</div>
             </div>
-
         </a>
-
     </div>
-
 </nav>
 
 <main class="main">
+    <div class="container">
+        <header class="pg-hd">
+            <h1 class="pg-title">CRONOGRAMA DE <span class="hl">ATIVIDADES</span></h1>
+            <p class="pg-sub">Acompanhe suas responsabilidades e evolua sua carreira.</p>
+        </header>
 
-<div class="container">
+        <div class="progress-card">
+            <div class="prog-stat">
+                <div class="prog-val" id="qtdPendentes" style="color:var(--orange)">0</div>
+                <div class="prog-lbl">Em Aberto</div>
+            </div>
+            <div class="prog-divider"></div>
+            <div class="prog-stat">
+                <div class="prog-val" id="qtdConcluidas" style="color:var(--success)">0</div>
+                <div class="prog-lbl">Concluídas</div>
+            </div>
+            <div class="prog-divider"></div>
+            <div class="prog-bar-wrap">
+                <div class="prog-bar-lbl">
+                    <span>Progresso Geral</span>
+                    <span id="porcentagem">0%</span>
+                </div>
+                <div class="pbar">
+                    <div class="pbar-fill" id="barraProgresso" style="width:0%"></div>
+                </div>
+            </div>
+        </div>
 
-<header class="pg-hd">
+        <section class="task-group">
+            <h2 class="group-title">Atividades em Aberto</h2>
+            <div class="task-list" id="listaPendentes"></div>
+        </section>
 
-<h1 class="pg-title">
-
-CRONOGRAMA DE
-
-<span class="hl">
-
-ATIVIDADES
-
-</span>
-
-</h1>
-
-<p class="pg-sub">
-
-Acompanhe suas responsabilidades e evolua sua carreira.
-
-</p>
-
-</header>
-
-<div class="progress-card">
-
-<div class="prog-stat">
-
-<div class="prog-val" id="qtdPendentes" style="color:var(--o)">
-0
-</div>
-
-<div class="prog-lbl">
-Em Aberto
-</div>
-
-</div>
-
-<div class="prog-divider"></div>
-
-<div class="prog-stat">
-
-<div class="prog-val" id="qtdConcluidas" style="color:var(--success)">
-0
-</div>
-
-<div class="prog-lbl">
-Concluídas
-</div>
-
-</div>
-
-<div class="prog-divider"></div>
-
-<div class="prog-bar-wrap">
-
-<div class="prog-bar-lbl">
-
-<span>Progresso Geral</span>
-
-<span id="porcentagem">
-0%
-</span>
-
-</div>
-
-<div class="pbar">
-
-<div class="pbar-fill"
-id="barraProgresso"
-style="width:0%">
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<section class="task-group">
-
-    <h2 class="group-title">Atividades em Aberto</h2>
-
-    <div class="task-list" id="listaPendentes">
-
-   
-
+        <section class="task-group">
+            <h2 class="group-title">Histórico de Conclusão</h2>
+            <div class="task-list" id="listaConcluidas"></div>
+        </section>
     </div>
-
-</section>
-
-
-<section class="task-group">
-
-    <h2 class="group-title">Histórico de Conclusão</h2>
-
-    <div class="task-list" id="listaConcluidas">
-
-      
-    </div>
-
-</section>
-
-</div>
 </main>
 
+<script src="js/sessao.js"></script>
 <script src="js/detalhesTarefa.js"></script>
 
 </body>

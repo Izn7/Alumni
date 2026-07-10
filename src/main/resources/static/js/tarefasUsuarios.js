@@ -41,9 +41,9 @@ async function listarEstagiarios() {
 
 
 
+		
+
 		const tr = document.createElement("tr");
-
-
 
 		tr.innerHTML = `
 		    <td>${estagiario.nome}</td>
@@ -52,23 +52,23 @@ async function listarEstagiarios() {
 
 		    <td>${estagiario.email}</td>
 
-			<td class="td-actions">
+		    <td class="td-actions">
 
-			    <button class="btn-assign"
-			        onclick="abrirPainel(${estagiario.id})">
+		        <button class="btn-assign"
+		            onclick="abrirPainel(${estagiario.id})">
 
-			        Atribuir
+		            Atribuir
 
-			    </button>
+		        </button>
 
-			    <button class="btn-delete"
-			        onclick="deletarTarefa(${estagiario.id})">
+		        <button class="btn-delete"
+		            onclick="limparTarefasEstagiario(${estagiario.id})">
 
-			        🗑
+		            🗑
 
-			    </button>
+		        </button>
 
-			</td>
+		    </td>
 		`;
 
 
@@ -81,26 +81,30 @@ async function listarEstagiarios() {
 	});
 
 }
+async function limparTarefas(idEstagiario){
 
-async function deletarTarefa(id){
-
-    if(!confirm("Deseja realmente excluir as tarefas deste estagiário?")){
+    if(!confirm("Deseja remover as tarefas deste estagiário?")){
         return;
     }
 
-    const response = await fetch(API_DELETAR + "/" + id,{
-        method:"DELETE"
-    });
+
+    const response = await fetch(
+        "http://localhost:8000/TarefasUsuario/AtualizarStatus/" + idEstagiario,
+        {
+            method:"PUT"
+        }
+    );
+
 
     if(response.ok){
 
-        alert("Tarefa(s) excluída(s) com sucesso!");
+        alert("Tarefas removidas!");
 
         listarEstagiarios();
 
     }else{
 
-        alert("Erro ao excluir.");
+        alert("Erro ao remover tarefas.");
 
     }
 
@@ -249,7 +253,15 @@ async function salvarTarefasSelecionadas() {
 
 }
 
+async function limparTarefasEstagiario(id){
 
+    if(!confirm("Deseja remover as tarefas deste estagiário?")){
+        return;
+    }
+
+    // sua lógica aqui
+
+}
 
 
 

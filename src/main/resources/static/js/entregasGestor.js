@@ -194,20 +194,17 @@ function visualizarArquivo(nomeArquivo) {
 async function aprovarEntrega(id){
 
     const response = await fetch(
-
         "http://localhost:8000/TarefasConcluidas/Aprovar/" + id,
-
         {
             method:"PUT"
         }
-
     );
 
     if(response.ok){
 
         alert("Entrega aprovada!");
 
-        carregarEntregas();
+        removerEntregaTela(id);
 
     }else{
 
@@ -217,23 +214,21 @@ async function aprovarEntrega(id){
 
 }
 
+
 async function reprovarEntrega(id){
 
     const response = await fetch(
-
         "http://localhost:8000/TarefasConcluidas/Reprovar/" + id,
-
         {
             method:"PUT"
         }
-
     );
 
     if(response.ok){
 
         alert("Entrega reprovada!");
 
-        carregarEntregas();
+        removerEntregaTela(id);
 
     }else{
 
@@ -242,6 +237,19 @@ async function reprovarEntrega(id){
     }
 
 }
+
+
+function removerEntregaTela(id){
+
+    entregas = entregas.filter(item => item.id !== id);
+
+    atualizarCards();
+
+    renderizarEntregas(entregas);
+
+}
+
+
 
 function formatarData(data) {
 

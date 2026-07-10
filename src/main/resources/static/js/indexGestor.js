@@ -4,18 +4,22 @@ async function carregarPerfilGestor() {
 
         const gestor = await buscarGestorLogado();
 
+
         document.getElementById("nomeTopo").textContent =
-            gestor.nome + " " + gestor.sobrenome;
+            gestor.nome;
+
 
         document.getElementById("nomeGestor").textContent =
-            gestor.cargo || "Gestor";
+            gestor.nome + " " + gestor.sobrenome;
+
 
     } catch (erro) {
 
-        console.error("Erro ao carregar perfil:", erro);
+        console.error("Erro ao carregar perfil do gestor:", erro);
 
     }
 
 }
+
 
 document.addEventListener("DOMContentLoaded", carregarPerfilGestor);

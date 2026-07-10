@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,6 +35,7 @@ public class TarefasUsuarioControllers {
 						@ResponseStatus(HttpStatus.OK)
 						public List<TarefasUsuarioEntity> buscarTodasTarefasUsuario(){
 							return tarefasUsuarioRepository.findAll();
+							
 							
 						}
 						@GetMapping("/BuscarPorId/{id}")
@@ -82,9 +84,33 @@ public class TarefasUsuarioControllers {
 						@GetMapping("/BuscarPorEstagiario/{id}")
 						public List<TarefasUsuarioEntity> buscarPorEstagiario(@PathVariable Integer id){
 
-						    return tarefasUsuarioRepository.findByEstagiariosIdAndStatus(id, "PENDENTE");
+						    return tarefasUsuarioRepository.findByEstagiariosId(id);
 
 						}
+						
+						@PutMapping("/AtualizarStatus/{id}")
+						public ResponseEntity<?> atualizarStatus(
+						        @PathVariable Integer id){
+
+						    List<TarefasUsuarioEntity> lista =
+						        tarefasUsuarioRepository.findAll();
+
+
+						    for(TarefasUsuarioEntity tarefa : lista){
+
+						        if(tarefa.getEstagiarios().getId().equals(id)){
+
+						            tarefa.setStatus("REMOVIDA");
+
+						            tarefasUsuarioRepository.save(tarefa);
+
+						        }
+
+						    }
+
+						    return ResponseEntity.ok().build();
+						}
+						
 			}
 
 	

@@ -34,6 +34,7 @@ public class EstagiariosControllers {
 					private BCryptPasswordEncoder encoder;
 					
 					
+					
 					@GetMapping("/BuscarTodos")
 					@ResponseStatus(HttpStatus.OK)
 					public List<EstagiariosEntity> buscarTodosEstagiarios(){

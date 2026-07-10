@@ -6,4 +6,9 @@ import br.com.TCC.Alumni.entity.TarefasConcluidasEntity;
 
 public interface TarefasConcluidasRepository extends JpaRepository<TarefasConcluidasEntity, Integer>{
 
+	boolean existsByEstagiarioIdAndTarefasEntityId(
+	        Integer idEstagiario,
+	        Integer idTarefa
+	);
+	
 }

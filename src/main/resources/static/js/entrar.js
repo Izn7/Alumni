@@ -86,6 +86,8 @@
 	
 			const usuarioLogado = await response.json();
 	
+			console.log("Usuário retornado pelo login:", usuarioLogado);
+			
 			if (response.ok) {
 	
 				
