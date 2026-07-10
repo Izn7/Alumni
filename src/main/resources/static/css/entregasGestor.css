@@ -1,0 +1,321 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Plus Jakarta Sans",sans-serif;
+}
+
+body{
+
+    background:#08090b;
+    color:white;
+
+}
+
+.topbar{
+
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 40px;
+
+    background:#101216;
+
+    border-bottom:1px solid #23262d;
+
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+}
+
+.logo-icon{
+
+    width:42px;
+    height:42px;
+
+    background:#ff7b00;
+
+    border-radius:12px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-weight:bold;
+
+}
+
+.logo span{
+
+    font-size:24px;
+    font-weight:700;
+
+}
+
+.btn-back{
+
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#181b22;
+
+    color:#ff7b00;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+}
+
+.perfil{
+
+    display:flex;
+    gap:12px;
+    align-items:center;
+
+}
+
+.avatar{
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    background:#ff7b00;
+
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-weight:bold;
+
+}
+
+.perfil span{
+
+    color:#9ca3af;
+
+}
+
+main{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:40px;
+
+}
+
+.titulo h1{
+
+    font-size:34px;
+
+}
+
+.titulo p{
+
+    color:#9ca3af;
+
+    margin-top:8px;
+
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+    margin:35px 0;
+
+}
+
+.card-info{
+
+    background:#12151b;
+
+    border:1px solid #252932;
+
+    border-radius:20px;
+
+    padding:30px;
+
+}
+
+.card-info h2{
+
+    color:#ff7b00;
+
+    font-size:38px;
+
+}
+
+.card-info span{
+
+    color:#9ca3af;
+
+}
+
+.pesquisa{
+
+    margin-bottom:30px;
+
+}
+
+.pesquisa input{
+
+    width:100%;
+
+    padding:16px;
+
+    border-radius:14px;
+
+    border:1px solid #252932;
+
+    background:#101216;
+
+    color:white;
+
+    outline:none;
+
+}
+
+#listaEntregas{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.entrega{
+
+    background:#12151b;
+
+    border:1px solid #252932;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    transition:.25s;
+
+}
+
+.entrega:hover{
+
+    border-color:#ff7b00;
+
+}
+
+.entrega h3{
+
+    color:#ff7b00;
+
+}
+
+.entrega p{
+
+    margin-top:8px;
+
+    color:#d1d5db;
+
+}
+
+.info{
+
+    margin-top:20px;
+
+    display:flex;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+    color:#9ca3af;
+
+}
+
+.acoes{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:25px;
+
+}
+
+.acoes button{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+}
+
+.btn-download{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+.btn-aprovar{
+
+    background:#16a34a;
+
+    color:white;
+
+}
+
+.btn-reprovar{
+
+    background:#dc2626;
+
+    color:white;
+
+}
+
+@media(max-width:900px){
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.info{
+
+flex-direction:column;
+
+}
+
+}

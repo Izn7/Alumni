@@ -5,11 +5,15 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -36,6 +40,40 @@ public class TarefasConcluidasController {
     @Autowired
     private EstagiariosRepository estagiariosRepository;
 
+    @GetMapping("/BuscarTodos")
+    public List<TarefasConcluidasEntity> buscarTodos(){
+        return repository.findAll();
+    }
+    
+    @PutMapping("/Aprovar/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public TarefasConcluidasEntity aprovar(@PathVariable Integer id){
+
+        TarefasConcluidasEntity entrega =
+                repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Entrega não encontrada"));
+
+        entrega.setStatus("APROVADA");
+
+        return repository.save(entrega);
+
+    }
+    
+    @PutMapping("/Reprovar/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public TarefasConcluidasEntity reprovar(@PathVariable Integer id){
+
+        TarefasConcluidasEntity entrega =
+                repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Entrega não encontrada"));
+
+        entrega.setStatus("REPROVADA");
+
+        return repository.save(entrega);
+
+    }
+    
+   
     @PostMapping("/Gravar")
     @ResponseStatus(HttpStatus.CREATED)
     public TarefasConcluidasEntity gravar(
@@ -54,7 +92,7 @@ public class TarefasConcluidasController {
 
 
         Path caminho = Paths.get(
-                "//SC-ALPHA/deploy/alumini/img/" + nomeArquivo
+                "//192.168.10.22/deploy/alumini/img/" + nomeArquivo
         );
 
 

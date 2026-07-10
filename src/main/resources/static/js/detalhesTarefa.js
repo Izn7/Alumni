@@ -210,11 +210,14 @@
 	        return;
 	    }
 
-	    const form = new FormData();
+	
 
-	    form.append("idTarefa", idTarefa);
-	    form.append("observacoes", observacoes);
-	    form.append("arquivo", arquivo);
+		const form = new FormData();
+
+		form.append("idEstagiario", idEstagiario);
+		form.append("idTarefa", idTarefa);
+		form.append("observacoes", observacoes);
+		form.append("arquivo", arquivo);;
 
 	    const response = await fetch(
 	        "http://localhost:8000/TarefasConcluidas/Gravar",
@@ -222,6 +225,9 @@
 	            method:"POST",
 	            body:form
 	        }
+			
+			
+			
 	    );
 
 	    if(response.ok){

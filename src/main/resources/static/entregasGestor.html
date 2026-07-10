@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entregas Recebidas | ALUMNI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/entregasGestor.css">
+    <script defer src="js/entregasGestor.js"></script>
+
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <button class="btn-back" onclick="history.back()">←</button>
+
+        <div class="logo">
+            <div class="logo-icon">GDE</div>
+            <span>ALUMNI</span>
+        </div>
+
+        <div class="perfil">
+
+            <div class="avatar">AD</div>
+
+            <div>
+
+                <h4>Administrador</h4>
+
+                <span>Gestor</span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="titulo">
+
+            <h1>Entregas Recebidas</h1>
+
+            <p>Atividades enviadas pelos estagiários.</p>
+
+        </section>
+
+        <section class="cards">
+
+            <div class="card-info">
+
+                <h2 id="qtdEntregas">0</h2>
+
+                <span>Total de entregas</span>
+
+            </div>
+
+            <div class="card-info">
+
+                <h2 id="qtdHoje">0</h2>
+
+                <span>Recebidas hoje</span>
+
+            </div>
+
+            <div class="card-info">
+
+                <h2 id="qtdPendentes">0</h2>
+
+                <span>Aguardando análise</span>
+
+            </div>
+
+        </section>
+
+        <div class="pesquisa">
+
+            <input
+                type="text"
+                id="buscar"
+                placeholder="Pesquisar por estagiário ou tarefa...">
+
+        </div>
+
+        <section id="listaEntregas">
+
+            
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

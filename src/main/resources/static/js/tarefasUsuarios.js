@@ -46,30 +46,29 @@ async function listarEstagiarios() {
 
 
 		tr.innerHTML = `
-
 		    <td>${estagiario.nome}</td>
 
 		    <td>${estagiario.cargo}</td>
 
 		    <td>${estagiario.email}</td>
 
-		    <td>
+			<td class="td-actions">
 
-		        <div class="td-actions">
+			    <button class="btn-assign"
+			        onclick="abrirPainel(${estagiario.id})">
 
-		            <button class="btn-assign"
-		                    onclick="abrirPainel(${estagiario.id})">
-		                Atribuir
-		            </button>
+			        Atribuir
 
-					<button class="btn-delete" onclick="deletarTarefa(${estagiario.id})">
-					    🗑
-					</button>
+			    </button>
 
-		        </div>
+			    <button class="btn-delete"
+			        onclick="deletarTarefa(${estagiario.id})">
 
-		    </td>
+			        🗑
 
+			    </button>
+
+			</td>
 		`;
 
 
@@ -133,38 +132,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function abrirPainel(id) {
 
-	estagiarioSelecionado = id;
+    estagiarioSelecionado = id;
 
-	tarefasSelecionadas.clear();
+    tarefasSelecionadas.clear();
 
+    const est = estagiarios.find(e => e.id === id);
 
+    document.getElementById("nome-estagiario").innerText = est.nome;
 
-	const est = estagiarios.find(e => e.id === id);
+    renderizarTarefas();
 
-
-
-	const painel = document.getElementById("painel-tarefas");
-
-
-
-	painel.style.display = "flex";
-
-
-
-	document.getElementById("nome-estagiario").innerText = est.nome;
-
-
-
-	renderizarTarefas();
+    document
+        .getElementById("painel-tarefas")
+        .classList.add("active");
 
 }
 
-function fecharPainel() {
+function fecharPainel(){
 
-	document.getElementById("painel-tarefas").style.display = "none";
+    document
+        .getElementById("painel-tarefas")
+        .classList.remove("active");
 
 }
-
 
 
 function renderizarTarefas() {

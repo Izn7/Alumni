@@ -166,3 +166,51 @@ a{text-decoration:none;color:inherit}
   .pg-hd{flex-direction:column;gap:16px}
   .pg-title{font-size:2rem}
 }
+
+.header-actions{
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+
+.btn-return{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:14px 22px;
+
+    border-radius:14px;
+
+    background:#111827;
+
+    color:#fff;
+
+    border:1px solid #334155;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.25s;
+}
+
+.btn-return svg{
+
+    width:18px;
+    height:18px;
+
+}
+
+.btn-return:hover{
+
+    background:#f97316;
+
+    border-color:#f97316;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 25px rgba(249,115,22,.35);
+
+}
