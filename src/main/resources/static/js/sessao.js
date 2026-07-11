@@ -1,8 +1,8 @@
 const idUsuario = localStorage.getItem("idUsuario");
 
-const API_GESTOR = "http://localhost:8000/Gestores/BuscarPorId/";
-const API_EMPRESA = "http://localhost:8000/Empresas/BuscarPorId/";
-const API_ESTAGIARIO = "http://localhost:8000/Estagiarios/BuscarPorId/";
+const API_GESTOR = "http://192.168.10.22:1433/Gestores/BuscarPorId/";
+const API_EMPRESA = "http://192.168.10.22:1433/Empresas/BuscarPorId/";
+const API_ESTAGIARIO = "http://192.168.10.22:1433/Estagiarios/BuscarPorId/";
 
 async function buscarGestorLogado() {
 

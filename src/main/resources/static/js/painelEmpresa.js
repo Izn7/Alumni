@@ -17,11 +17,11 @@ async function carregarPerfilEmpresa() {
 document.addEventListener("DOMContentLoaded", carregarPerfilEmpresa);
 
 const API_GESTORES =
-	"http://localhost:8000/Gestores/BuscarTodos";
+	"http://192.168.10.22:1433/Gestores/BuscarTodos";
 
 
 const API_ESTAGIARIOS =
-	"http://localhost:8000/Estagiarios/BuscarTodos";
+	"http://192.168.10.22:1433/Estagiarios/BuscarTodos";
 
 
 document.addEventListener("DOMContentLoaded", () => {

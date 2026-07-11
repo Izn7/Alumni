@@ -1,5 +1,5 @@
-const API_BUSCAR_TODOS_ESTAGIARIOS = "http://localhost:8000/Estagiarios/BuscarTodos";
-const API_DELETAR = "http://localhost:8000/Estagiarios/Deletar";
+const API_BUSCAR_TODOS_ESTAGIARIOS = "http://192.168.10.22:1433/Estagiarios/BuscarTodos";
+const API_DELETAR = "http://192.168.10.22:1433/Estagiarios/Deletar";
 
 
 async function listarEstagiarios() {

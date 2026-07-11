@@ -1,7 +1,7 @@
-// Chamando API
 
-const API_SALVAR_GESTOR = "http://localhost:8000/Gestores/Gravar";
-const API_ATUALIZAR_GESTOR = "http://localhost:8000/Gestores/Atualizar";
+
+const API_SALVAR_GESTOR = "http://192.168.10.22:1433/Gestores/Gravar";
+const API_ATUALIZAR_GESTOR = "http://192.168.10.22:1433/Gestores/Atualizar";
 
 let editandoId = null;
 

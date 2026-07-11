@@ -1,7 +1,7 @@
-// Chamando API
-const API_SALVAR = 'http://localhost:8000/Estagiarios/Gravar';
-const API_ATUALIZAR = 'http://localhost:8000/Estagiarios/Atualizar';
-const API_BUSCAR_ID = 'http://localhost:8000/Estagiarios/BuscarPorId';
+
+const API_SALVAR = 'http://192.168.10.22:1433/Estagiarios/Gravar';
+const API_ATUALIZAR = 'http://192.168.10.22:1433/Estagiarios/Atualizar';
+const API_BUSCAR_ID = 'http://192.168.10.22:1433/Estagiarios/BuscarPorId';
 
 let editandoId = null;
 
@@ -80,7 +80,7 @@ async function cadastrarEstagiario() {
 	    return;
 	}
 
-	// Só envia a senha quando for um cadastro novo
+	
 	if (!editandoId) {
 	    estagiario.senha = document.getElementById("senha").value;
 	}

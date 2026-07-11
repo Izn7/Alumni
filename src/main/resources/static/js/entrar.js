@@ -1,6 +1,6 @@
-	const API_LOGIN_ESTAGIARIO = 'http://localhost:8000/Estagiarios/login';
-	const API_LOGIN_EMPRESA = 'http://localhost:8000/Empresas/login';
-	const API_LOGIN_GESTOR = 'http://localhost:8000/Gestores/login';
+	const API_LOGIN_ESTAGIARIO = 'http://192.168.10.22:1433/Estagiarios/login';
+	const API_LOGIN_EMPRESA = 'http://192.168.10.22:1433/Empresas/login';
+	const API_LOGIN_GESTOR = 'http://192.168.10.22:1433/Gestores/login';
 	
 	
 	let perfilAtivo = 'estagiario';

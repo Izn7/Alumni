@@ -1,6 +1,6 @@
-const API_ATUALIZAR_SENHA_ESTAGIARIO = "http://localhost:8000/Estagiarios/Atualizar";
-const API_ATUALIZAR_SENHA_EMPRESA = "http://localhost:8000/Empresas/Atualizar";
-const API_ATUALIZAR_SENHA_GESTOR = "http://localhost:8000/Gestores/Atualizar";
+const API_ATUALIZAR_SENHA_ESTAGIARIO = "http://192.168.10.22:1433/Estagiarios/Atualizar";
+const API_ATUALIZAR_SENHA_EMPRESA = "http://192.168.10.22:1433/Empresas/Atualizar";
+const API_ATUALIZAR_SENHA_GESTOR = "http://192.168.10.22:1433/Gestores/Atualizar";
 
 function VerSenha(idCampo) {
 

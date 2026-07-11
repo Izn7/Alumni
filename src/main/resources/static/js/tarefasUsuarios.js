@@ -1,7 +1,7 @@
-const API_BUSCAR_TODOS_ESTAGIARIOS = 'http://localhost:8000/Estagiarios/BuscarTodos';
-const API_TAREFAS = "http://localhost:8000/Tarefas/BuscarTodos";
-const API_GRAVAR = "http://localhost:8000/TarefasUsuario/Gravar";
-const API_DELETAR="http://localhost:8000/Tarefas/Deletar";
+const API_BUSCAR_TODOS_ESTAGIARIOS = 'http://192.168.10.22:1433/Estagiarios/BuscarTodos';
+const API_TAREFAS = "http://192.168.10.22:1433/Tarefas/BuscarTodos";
+const API_GRAVAR = "http://192.168.10.22:1433/TarefasUsuario/Gravar";
+const API_DELETAR="http://192.168.10.22:1433/Tarefas/Deletar";
 
 
 let tarefas = [];
@@ -89,7 +89,7 @@ async function limparTarefas(idEstagiario){
 
 
     const response = await fetch(
-        "http://localhost:8000/TarefasUsuario/AtualizarStatus/" + idEstagiario,
+        "http://192.168.10.22:1433/TarefasUsuario/AtualizarStatus/" + idEstagiario,
         {
             method:"PUT"
         }
@@ -259,7 +259,7 @@ async function limparTarefasEstagiario(id){
         return;
     }
 
-    // sua lógica aqui
+    
 
 }
 

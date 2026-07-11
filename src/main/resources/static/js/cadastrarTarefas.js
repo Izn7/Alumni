@@ -1,6 +1,6 @@
 
-const API_SALVAR_TAREFA = 'http://localhost:8000/Tarefas/Gravar';
-const API_ATUALIZAR_TAREFA = 'http://localhost:8000/Tarefas/Atualizar';
+const API_SALVAR_TAREFA = 'http://192.168.10.22:1433/Tarefas/Gravar';
+const API_ATUALIZAR_TAREFA = 'http://192.168.10.22:1433/Tarefas/Atualizar';
 
 let editandoId = null;
 

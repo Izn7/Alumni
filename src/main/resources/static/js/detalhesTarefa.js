@@ -1,5 +1,5 @@
 const API_TAREFAS_ESTAGIARIO =
-"http://localhost:8000/TarefasUsuario/BuscarPorEstagiario/";
+"http://192.168.10.22:1433/TarefasUsuario/BuscarPorEstagiario/";
 
 let idEstagiario = null;
 

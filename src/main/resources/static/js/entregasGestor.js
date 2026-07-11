@@ -1,8 +1,8 @@
 const API_BUSCAR_ENTREGAS =
-    "http://localhost:8000/TarefasConcluidas/BuscarTodos";
+    "http://192.168.10.22:1433/TarefasConcluidas/BuscarTodos";
 
 const API_ARQUIVOS =
-    "http://localhost:8000/img/";
+    "http://localhost:8012/img/";
 
 let entregas = [];
 
@@ -194,7 +194,7 @@ function visualizarArquivo(nomeArquivo) {
 async function aprovarEntrega(id){
 
     const response = await fetch(
-        "http://localhost:8000/TarefasConcluidas/Aprovar/" + id,
+        "http://192.168.10.22:1433/TarefasConcluidas/Aprovar/" + id,
         {
             method:"PUT"
         }
@@ -218,7 +218,7 @@ async function aprovarEntrega(id){
 async function reprovarEntrega(id){
 
     const response = await fetch(
-        "http://localhost:8000/TarefasConcluidas/Reprovar/" + id,
+        "http://192.168.10.22:1433/TarefasConcluidas/Reprovar/" + id,
         {
             method:"PUT"
         }
